@@ -32,6 +32,7 @@
     var concat = require('gulp-concat');
 
     // html
+    var jade = require('gulp-jade');
     var htmlmin = require('gulp-htmlmin');
     var htmlhint = require('gulp-htmlhint');
     var ngHtml2Js = require('gulp-ng-html2js');
@@ -140,6 +141,17 @@
             .pipe(gulp.dest('src/' + appName + '/scripts/app/'));
     });
 
+    gulp.task('index-jade-to-HTML', function () {
+
+        var pathToJade = 'src/' + appName + '/scripts/app/views/jade/**/*.jade';
+
+        return gulp.src(pathToJade)
+            .pipe(plumber())
+            .pipe(jade())
+            .pipe(gulp.dest('src/' + appName + '/scripts/app/views/'));
+
+    });
+
     gulp.task('index-min-IndexHTML', function () {
 
         var pathToIndex = 'src/' + appName + '/*.html';
@@ -158,6 +170,7 @@
         gulp.watch('src/**/*.{css,less}', ['index-min-LESS']);
         gulp.watch('src/**/*.js', ['index-min-JS']);
         gulp.watch('src/**/*.html', ['index-HTML-to-JS', 'index-min-HTML']);
+        gulp.watch('src/**/*.jade', ['index-jade-to-HTML']);
     });
 
 }());

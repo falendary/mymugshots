@@ -1,0 +1,19 @@
+{
+  "name": "MyMugshots",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Sergey Zhitenev"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/falendary/mymugshots",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

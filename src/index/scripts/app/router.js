@@ -16,9 +16,9 @@
                 url: '/',
                 templateUrl: 'landing.html'
             })
-            .state('app.catalog', {
+            .state('app.gallery', {
                 url: '/home',
-                templateUrl: 'catalog.html'
+                templateUrl: 'gallery.html'
             })
             .state('app.item', {
                 url: '/item/:id',
