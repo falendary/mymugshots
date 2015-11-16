@@ -36,6 +36,8 @@
     app.controller('galleryController', ['$scope', require('./app/controllers/galleryController')]);
     app.controller('detailController', ['$scope', require('./app/controllers/detailController')]);
 
+    app.directive('slickDir', [require('./app/directives/slickDir')]);
+
     require('./app/templates.min.js');
 
 }());

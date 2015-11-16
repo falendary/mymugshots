@@ -24,7 +24,7 @@ div(data-ng-controller="galleryController as vm")
 									| The Month
 							p.filter-txt text explaining filter result
 					div.gallery-carousel
-						slick(infinit="true", slides-to-show="4", slides-to-scroll="2")
+						.slick-div(data-slick-dir="")
 							.item-car(data-ng-repeat="item in vm.items")
 								md-grid-list(
 									md-cols="1",
