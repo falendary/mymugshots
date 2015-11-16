@@ -1,0 +1,40 @@
+div(data-ng-controller="galleryController as vm")
+	md-content.md-padding(flex)
+		div.fancy-header
+		div(layout="row", layout-align="center center")
+			md-card(flex-gt-sm="90", flex-gt-md="80").md-default-theme
+				md-card-content
+					.catal-logo-row(layout="row")
+						a(href="#" class="catal-logo-a") Site Title / Logo
+					md-toolbar.gallery-toolbar
+						div.md-toolbar-tools
+							div.nav-tools
+								md-button.md-icon-button.gallery-datepicker-btn
+									i.fa.fa-calendar
+								md-button.md-icon-button.gallery-search-btn
+									i.fa.fa-search
+							div.nav-links
+								md-button
+									| Today
+								md-button
+									| Yesterday
+								md-button
+									| Last Week
+								md-button
+									| The Month
+							p.filter-txt text explaining filter result
+					div.gallery-carousel
+						slick(infinite="true", slides-to-show="5", slides-to-scroll="4")
+							md-grid-list(
+								md-cols="4",
+								md-cols-sm="1",
+								md-cols-md="1",
+								md-row-height="1:1.6",
+								md-gutter="1em")
+								md-grid-tile(data-ng-repeat="item in vm.items")
+									md-card(flex="100")
+										div.gallery-item
+											div.gallery-item-photo
+												img(data-ng-src="{{item.photo}}", alt="{{item.title}}")
+											div.gallery-item-title(data-ng-bind="::item.title")
+											div.gallery-item-date(data-ng-bind="::item.date")
