@@ -24,7 +24,7 @@ div(data-ng-controller="galleryController as vm")
 									| The Month
 							p.filter-txt text explaining filter result
 					div.gallery-carousel
-						.slick-div(data-slick-dir="")
+						slick(infinite="true", slides-to-show="4", slides-to-scroll="4", center-mode="true", arrows="false", slick-dir)
 							.item-car(data-ng-repeat="item in vm.items")
 								md-grid-list(
 									md-cols="1",
@@ -44,27 +44,4 @@ div(data-ng-controller="galleryController as vm")
 													img(data-ng-src="{{item.photo2}}", alt="{{item.title2}}")
 												.gallery-item-title(data-ng-bind="::item.title2")
 												.gallery-item-date(data-ng-bind="::item.date2")
-
-							//- md-grid-list(
-							//- 	md-cols="4",
-							//- 	md-cols-sm="1",
-							//- 	md-cols-md="1",
-							//- 	md-row-height="1:1.6",
-							//- 	md-gutter="1em")
-							//- 	md-grid-tile(data-ng-repeat="item in vm.items")
-							//- 		md-card(flex="100")
-							//- 			div.gallery-item
-							//- 				div.gallery-item-photo
-							//- 					img(data-ng-src="{{item.photo}}", alt="{{item.title}}")
-							//- 				div.gallery-item-title(data-ng-bind="::item.title")
-							//- 				div.gallery-item-date(data-ng-bind="::item.date")
-
-							//- div.gallery-item(md-cols="4",
-							//-  	md-cols-sm="1",
-							//-  	md-cols-md="1",
-							//-  	md-row-height="1:1.6",
-							//-  	md-gutter="1em", data-ng-repeat="item in vm.items")
-							//- 	div.gallery-item-photo
-							//- 		img(data-ng-src="{{item.photo}}", alt="{{item.title}}")
-							//- 	div.gallery-item-title(data-ng-bind="::item.title")
-							//- 	div.gallery-item-date(data-ng-bind="::item.date")
+				
