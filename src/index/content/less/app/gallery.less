@@ -44,7 +44,35 @@
 }
 
 .gallery-carousel {
+  .item-car {
+    width: 33em;
+  }
   md-grid-list {
-      right: 25%;
+    // right: 37%;
+    margin-right: 1rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .gallery-carousel {
+    .item-car {
+      width: 43em;
     }
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .gallery-carousel {
+    .item-car {
+      width: 45em;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .gallery-carousel {
+    .item-car {
+      width: 67em;
+    }
+  }
 }

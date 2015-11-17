@@ -24,7 +24,7 @@ div(data-ng-controller="galleryController as vm")
 									| The Month
 							p.filter-txt text explaining filter result
 					div.gallery-carousel
-						slick(infinite="true", slides-to-show="4", slides-to-scroll="4", center-mode="true", arrows="false", slick-dir="", id="slick-el1")
+						slick(infinite="true", slides-to-show="4", slides-to-scroll="4", variable-width="true", arrows="false", slick-dir="")
 							.item-car(data-ng-repeat="item in vm.items")
 								md-grid-list(
 									md-cols="1",
@@ -44,43 +44,3 @@ div(data-ng-controller="galleryController as vm")
 													img(data-ng-src="{{item.photo2}}", alt="{{item.title2}}")
 												.gallery-item-title(data-ng-bind="::item.title2")
 												.gallery-item-date(data-ng-bind="::item.date2")
-						//- slick(infinite="true", slides-to-show="3", slides-to-scroll="3", center-mode="true", arrows="false", slick-dir="", id="slick-el2")
-						//- 	.item-car(data-ng-repeat="item in vm.items")
-						//- 		md-grid-list(
-						//- 			md-cols="1",
-						//- 			md-row-height="1:1.6",
-						//- 			md-gutter="1em")
-						//- 			md-grid-title
-						//- 				md-card(flex="100")
-						//- 					.gallery-item
-						//- 						.gallery-item-photo
-						//- 							img(data-ng-src="{{item.photo1}}", alt="{{item.title1}}")
-						//- 						.gallery-item-title(data-ng-bind="::item.title1")
-						//- 						.gallery-item-date(data-ng-bind="::item.date1")
-						//- 			md-grid-title
-						//- 				md-card(flex="100")
-						//- 					.gallery-item
-						//- 						.gallery-item-photo
-						//- 							img(data-ng-src="{{item.photo2}}", alt="{{item.title2}}")
-						//- 						.gallery-item-title(data-ng-bind="::item.title2")
-						//- 						.gallery-item-date(data-ng-bind="::item.date2")
-						//- slick(infinite="true", slides-to-show="2", slides-to-scroll="2", center-mode="true", arrows="false", slick-dir="", id="slick-el3")
-						//- 	.item-car(data-ng-repeat="item in vm.items")
-						//- 		md-grid-list(
-						//- 			md-cols="1",
-						//- 			md-row-height="1:1.6",
-						//- 			md-gutter="1em")
-						//- 			md-grid-title
-						//- 				md-card(flex="100")
-						//- 					.gallery-item
-						//- 						.gallery-item-photo
-						//- 							img(data-ng-src="{{item.photo1}}", alt="{{item.title1}}")
-						//- 						.gallery-item-title(data-ng-bind="::item.title1")
-						//- 						.gallery-item-date(data-ng-bind="::item.date1")
-						//- 			md-grid-title
-						//- 				md-card(flex="100")
-						//- 					.gallery-item
-						//- 						.gallery-item-photo
-						//- 							img(data-ng-src="{{item.photo2}}", alt="{{item.title2}}")
-						//- 						.gallery-item-title(data-ng-bind="::item.title2")
-						//- 						.gallery-item-date(data-ng-bind="::item.date2")
