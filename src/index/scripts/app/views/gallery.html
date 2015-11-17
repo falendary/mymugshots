@@ -21,7 +21,7 @@
               <p class="filter-txt">text explaining filter result</p>
             </div>
           </md-toolbar>
-          <div class="gallery-carousel">
+          <div class="gallery-carousel" data-ng-if="vm.slides">
             <slick infinite="true" slides-to-show="4" slides-to-scroll="4" variable-width="true" arrows="false" slick-dir="">
               <div data-ng-repeat="slide in vm.slides" class="item-car">
                 <md-grid-list md-cols="1" md-row-height="1:1.6" md-gutter="1em">
