@@ -1,5 +1,5 @@
 (function () {
-	'use strict'
+	'use strict';
 
 	module.exports = function () {
 		return {
@@ -19,7 +19,7 @@
 							attrs.slidesToShow = '3';
 							attrs.slidesToScroll = '3';
 						}
-					};
+					}
 			}
 		}
 	}

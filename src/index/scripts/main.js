@@ -23,7 +23,7 @@
 
         var resizeFonts = function (event) {
             document.body.style.fontSize = window.innerWidth / 192 + "px";
-            console.log(document.body.style.fontSize);
+            //console.log(document.body.style.fontSize);
         };
 
         window.addEventListener('resize', resizeFonts);
