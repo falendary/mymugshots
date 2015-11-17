@@ -1,11 +1,11 @@
 (function () {
-	'use strict'
+	'use strict';
 
 	module.exports = function () {
 		return {
 			restrict: 'A',
 			link: function (scope, elem, attrs) {
-				var windowWth = window.innerWidth,
+				var windowWth = window.innerWidth;
 					if (windowWth >= 1200) {
 						attrs.slidesToShow = '4';
 						attrs.slidesToScroll = '4';
@@ -21,7 +21,7 @@
 							attrs.slidesToScroll = '3';
 							console.log(attrs.slidesToShow);
 						}
-					};
+					}
 			}
 		}
 	}

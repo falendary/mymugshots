@@ -181,13 +181,8 @@
         gulp.watch('src/**/*.{css,less}', ['index-min-LESS']);
         gulp.watch('src/**/*.jade', ['jade']);
         gulp.watch('src/**/*.js', ['index-min-JS']);
-<<<<<<< HEAD
         gulp.watch('src/**/*.html', ['index-HTML-to-JS']);
         gulp.watch('src/index/content/fonts/*.{otf,eot,ttf,woff,woff2,eof,svg}', ['index-min-Fonts']);
         livereload.reload(['landing.html'])
-=======
-        gulp.watch('src/**/*.html', ['index-HTML-to-JS', 'index-min-HTML']);
-        gulp.watch('src/**/*.jade', ['index-jade-to-HTML']);
->>>>>>> 8cc5df1a9f624221dd901ab3a2a49d75dc3508ae
     });
 }());
