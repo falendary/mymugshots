@@ -17,17 +17,17 @@
 					// slickEl2.parentNode.removeChild(slickEl2);
 					// slickEl3.parentNode.removeChild(slickEl3);
 					if (windowWth >= 1200) {
-						attr.slidesToShow = '4';
-						attr.slidesToScroll = '4';
+						attrs.slidesToShow = '4';
+						attrs.slidesToScroll = '4';
 					}
 					else if (windowWth < 1200) {
 						if (windowWth < 768) {
-							attr.slidesToShow = '2';
-							attr.slidesToScroll = '2';
+							attrs.slidesToShow = '2';
+							attrs.slidesToScroll = '2';
 						}
 						else {
-							attr.slidesToShow = '3';
-							attr.slidesToScroll = '3';
+							attrs.slidesToShow = '3';
+							attrs.slidesToScroll = '3';
 						};
 					};
 				// window.addEventListener('resize', function() {
