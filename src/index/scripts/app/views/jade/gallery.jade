@@ -25,22 +25,15 @@ div(data-ng-controller="galleryController as vm")
 							p.filter-txt text explaining filter result
 					div.gallery-carousel
 						slick(infinite="true", slides-to-show="4", slides-to-scroll="4", variable-width="true", arrows="false", slick-dir="")
-							.item-car(data-ng-repeat="item in vm.items")
+							.item-car(data-ng-repeat="slide in vm.slides")
 								md-grid-list(
 									md-cols="1",
 									md-row-height="1:1.6",
 									md-gutter="1em")
 									md-grid-title
-										md-card(flex="100")
+										md-card(flex="100", data-ng-repeat="item in slide.items")
 											.gallery-item
 												.gallery-item-photo
-													img(data-ng-src="{{item.photo1}}", alt="{{item.title1}}")
-												.gallery-item-title(data-ng-bind="::item.title1")
-												.gallery-item-date(data-ng-bind="::item.date1")
-									md-grid-title
-										md-card(flex="100")
-											.gallery-item
-												.gallery-item-photo
-													img(data-ng-src="{{item.photo2}}", alt="{{item.title2}}")
-												.gallery-item-title(data-ng-bind="::item.title2")
-												.gallery-item-date(data-ng-bind="::item.date2")
+													img(data-ng-src="{{item.image_url}}", alt="{{item.first_name}}")
+												.gallery-item-title(data-ng-bind="::item.first_name")
+												.gallery-item-date(data-ng-bind="::item.booking_datetime | date:'dd.mm.yyyy'")
