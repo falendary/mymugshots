@@ -14,7 +14,7 @@
         var vm = this;
 
         vm.items = [];
-        for (var i = 1; i <= 9; i = i + 2) {
+        for (var i = 1; i <= 15; i = i + 2) {
             var s = i + 1;
             vm.items.push({
                 title1: 'Image title #' + i,
