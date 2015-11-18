@@ -15,7 +15,7 @@
         var vm = this;
 
         vm.config = {
-            background: 'index/content/img/bg.jpg';
+            background: 'index/content/img/bg.jpg'
         }
 
     }

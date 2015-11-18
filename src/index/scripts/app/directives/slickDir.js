@@ -5,10 +5,9 @@
 		return {
 			restrict: 'A',
 			link: function (scope, elem, attrs) {
-				var windowWth = window.innerWidth,
-					slickEl = document.querySelectorAll('.gallery-carousel slick')[0];
+				var windowWth = window.innerWidth;
 				if (windowWth >= 1200) {
-					attrs.slidesToShow = '4'; // Cv
+					attrs.slidesToShow = '4';
 					attrs.slidesToScroll = '4';
 				}
 				else if (windowWth < 1200) {
