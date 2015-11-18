@@ -36,7 +36,27 @@ div(data-ng-controller="galleryController as vm")
 													img(data-ng-src="{{item.image_url}}", alt="{{item.first_name}}")
 												.gallery-item-title(data-ng-bind="::item.first_name")
 												.gallery-item-date(data-ng-bind="::item.booking_datetime | date:'dd.mm.yyyy'")
+				md-card-content
 					.advert-row(layout="row")
 						.ltAd
 						.rtAd
-
+				md-card-content
+					.txtBlocks(layout='row')
+						.about-block(flex="66")
+							h4.abBlock-h.md-headline About Block
+							p.abBlock-p
+								|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet commodo nibh. Proin venenatis lobortis venenatis. Nulla facilisi. Nulla facilisi. liquam rutrum tortor a lorem malesuada, sed lobortis ipsum iaculis. Ut in augue ac risus viverra lobortis vestibulum in nibh. Integer vitae sodales lorem. 
+							p.abBlock-p
+								|Morbi laoreet erat lorem, ut dictum ante ultricies sed. Sed lacinia purus erat, eu accumsan diam sagittis et. Phasellus dictum arcu sed nibh pretium, vitae blandit augue dignissim.
+							p.abBlock-p
+								|Maecenas commodo mauris enim, ut semper ex luctus vitae. Ut a tempor libero. Fusce mauris orci, facilisis id magna quis, porttitor imperdiet massa. terdum et malesuada fames ac ante ipsum primis in faucibus.
+							p.abBlock-p
+								|Fusce vehicula velit massa, ut convallis massa lacinia eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque consequat vitae erat eget vehicula. Ut interdum odio ac erat porttitor, dapibus tempus risus mattis. Ut elementum quis tellus quis maximus.
+						.info-advert(layout="column", flex='33')
+							.inf-block(flex)
+								h4.abBlock-h.md-headline Info Block
+								p.abBlock-p
+									|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dictum arcu sed nibh pretium, vitae blandit augue dignissim.
+								p.abBlock-p
+									|Nullam sit amet commodo nibh. Proin venenatis lobortis venenatis.
+							.sm-advert-block(flex)
