@@ -22,8 +22,8 @@ div(data-ng-controller="galleryController as vm")
 								md-button
 									| The Month
 							p.filter-txt text explaining filter result
-					div.gallery-carousel
-						slick(infinite="true", slides-to-show="4", slides-to-scroll="4", variable-width="true", arrows="false", slick-dir="")
+					div.gallery-carousel(data-ng-if="vm.slides")
+						slick(infinite="true", slides-to-show="4", slides-to-scroll="4", variable-width="true", arrows="false", class="gallery-slick", slick-dir="")
 							.item-car(data-ng-repeat="slide in vm.slides")
 								md-grid-list(
 									md-cols="1",
@@ -33,22 +33,10 @@ div(data-ng-controller="galleryController as vm")
 										md-card(flex="100", data-ng-repeat="item in slide.items")
 											.gallery-item
 												.gallery-item-photo
-<<<<<<< HEAD
-													img(data-ng-src="{{item.photo1}}", alt="{{item.title1}}")
-												.gallery-item-title(data-ng-bind="::item.title1")
-												.gallery-item-date(data-ng-bind="::item.date1")
-									md-grid-title
-										md-card(flex="100")
-											.gallery-item
-												.gallery-item-photo
-													img(data-ng-src="{{item.photo2}}", alt="{{item.title2}}")
-												.gallery-item-title(data-ng-bind="::item.title2")
-												.gallery-item-date(data-ng-bind="::item.date2")
-					.ad-rows(layout="row")
-						.ltAd(flex="50")
-						.rtAd(flex="50")
-=======
 													img(data-ng-src="{{item.image_url}}", alt="{{item.first_name}}")
 												.gallery-item-title(data-ng-bind="::item.first_name")
 												.gallery-item-date(data-ng-bind="::item.booking_datetime | date:'dd.mm.yyyy'")
->>>>>>> 21b03989d54099f1c93c090afd62ecfaec52cff4
+					.advert-row(layout="row")
+						.ltAd
+						.rtAd
+
