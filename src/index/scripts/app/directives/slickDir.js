@@ -36,8 +36,7 @@
 				});
 				function callBackFun() {
 					console.log('Third slide');
-				};
-				window.onresize = resizeFun;			
+				};		
 			}
 		}
 	}
