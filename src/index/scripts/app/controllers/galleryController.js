@@ -33,6 +33,12 @@
 
         vm.slidesToScroll = 4;
         vm.slidesToShow = 4;
-    }
 
+        var originatorEv;
+        vm.openMenu = function($mdOpenMenu, ev) {
+            originatorEv = ev;
+            $mdOpenMenu(ev);
+        };
+
+    }
 }());

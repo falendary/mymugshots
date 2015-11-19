@@ -8,10 +8,22 @@ div(data-ng-controller="galleryController as vm")
 					md-toolbar.gallery-toolbar
 						div.md-toolbar-tools
 							div.nav-tools
-								md-button.md-icon-button.gallery-datepicker-btn
-									i.fa.fa-calendar
-								md-button.md-icon-button.gallery-search-btn
-									i.fa.fa-search
+								md-menu(md-offset="20em 35em")
+									md-button.md-icon-button.gallery-datepicker-btn(ng-click="$mdOpenMenu($index)")
+										i.fa.fa-calendar
+									md-menu-content(width="6", class="date-menu")
+										md-menu-item
+											input(type='date', ng-model="date", class="datepicker")
+											md-button.date-sender accept
+								md-menu(md-offset="20em 35em")
+									md-button.md-icon-button.gallery-search-btn(ng-click="$mdOpenMenu($index)")
+										i.fa.fa-search
+									md-menu-content(width="6", class="seeker-dropmen")
+										md-menu-item
+											md-input-container.seeker-inputmenu
+												input(name="search", class="seeker-input md-body-1")
+											md-button.seeker-subbtn
+												i.fa.fa-search
 							div.nav-links
 								md-button
 									| Today
@@ -37,26 +49,49 @@ div(data-ng-controller="galleryController as vm")
 												.gallery-item-title(data-ng-bind="::item.first_name")
 												.gallery-item-date(data-ng-bind="::item.booking_datetime | date:'dd.mm.yyyy'")
 				md-card-content
-					.advert-row(layout="row")
+					div(layout="row")
 						.ltAd
 						.rtAd
 				md-card-content
-					.txtBlocks(layout='row')
-						.about-block(flex="66")
-							h4.abBlock-h.md-title About Block
-							p.abBlock-p
-								|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet commodo nibh. Proin venenatis lobortis venenatis. Nulla facilisi. Nulla facilisi. liquam rutrum tortor a lorem malesuada, sed lobortis ipsum iaculis. Ut in augue ac risus viverra lobortis vestibulum in nibh. Integer vitae sodales lorem. 
-							p.abBlock-p
-								|Morbi laoreet erat lorem, ut dictum ante ultricies sed. Sed lacinia purus erat, eu accumsan diam sagittis et. Phasellus dictum arcu sed nibh pretium, vitae blandit augue dignissim.
-							p.abBlock-p
-								|Maecenas commodo mauris enim, ut semper ex luctus vitae. Ut a tempor libero. Fusce mauris orci, facilisis id magna quis, porttitor imperdiet massa. terdum et malesuada fames ac ante ipsum primis in faucibus.
-							p.abBlock-p
-								|Fusce vehicula velit massa, ut convallis massa lacinia eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque consequat vitae erat eget vehicula. Ut interdum odio ac erat porttitor, dapibus tempus risus mattis. Ut elementum quis tellus quis maximus.
-						.info-advert(layout="column", flex='33')
+					div(layout='row')
+						div(flex="66")
+							.about-block
+								h4.abBlock-h.md-title About Block
+								p.abBlock-p
+									|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet commodo nibh. Proin venenatis lobortis venenatis. Nulla facilisi. Nulla facilisi. liquam rutrum tortor a lorem malesuada, sed lobortis ipsum iaculis. Ut in augue ac risus viverra lobortis vestibulum in nibh. Integer vitae sodales lorem. 
+								p.abBlock-p
+									|Morbi laoreet erat lorem, ut dictum ante ultricies sed. Sed lacinia purus erat, eu accumsan diam sagittis et. Phasellus dictum arcu sed nibh pretium, vitae blandit augue dignissim.
+								p.abBlock-p
+									|Maecenas commodo mauris enim, ut semper ex luctus vitae. Ut a tempor libero. Fusce mauris orci, facilisis id magna quis, porttitor imperdiet massa. terdum et malesuada fames ac ante ipsum primis in faucibus.
+								p.abBlock-p
+									|Fusce vehicula velit massa, ut convallis massa lacinia eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque consequat vitae erat eget vehicula. Ut interdum odio ac erat porttitor, dapibus tempus risus mattis. Ut elementum quis tellus quis maximus.
+						div(layout="column", flex='33')
 							.inf-block(flex)
-								h4.abBlock-h.md-title Info Block
-								p.abBlock-p
-									|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dictum arcu sed nibh pretium, vitae blandit augue dignissim.
-								p.abBlock-p
-									|Nullam sit amet commodo nibh. Proin venenatis lobortis venenatis.
-							.sm-advert-block(flex)
+								.inf-margin
+									h4.abBlock-h.md-title Info Block
+									p.abBlock-p
+										|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dictum arcu sed nibh pretium, vitae blandit augue dignissim.
+									p.abBlock-p
+										|Nullam sit amet commodo nibh. Proin venenatis lobortis venenatis.
+							.sm-advert(flex)
+				md-card-content
+					.widgets(layout="row")
+						.widget-1(flex="33")
+							.widget-block
+							h3.widget-h.md-title Widget 1
+						.widget-2(flex="33")
+							.widget-block
+							h3.widget-h.md-title Widget 2
+						.widget-3(flex="33")
+							.widget-block
+							h3.widget-h.md-title Widget 3
+				md-card-content.padding-bot-0
+					.gallery-foot(layout="row")
+						div(flex="75")
+							p.rights
+								|<i class="fa fa-copyright"></i> <a href="#" class='sitename-link'>SiteName 2015
+						div(flex="25")
+							md-list.foot-list(layout-align='end end')
+								md-button(href="#", class="foot-link") Link 1
+								md-button(href="#", class="foot-link") Link 1
+								md-button(href="#", class="foot-link") Link 1
