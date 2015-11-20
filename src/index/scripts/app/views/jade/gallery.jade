@@ -8,13 +8,14 @@ div(data-ng-controller="galleryController as vm")
 					md-toolbar.gallery-toolbar
 						div.md-toolbar-tools
 							div.nav-tools
-								md-menu(md-offset="20em 35em")
-									md-button.md-icon-button.gallery-datepicker-btn(ng-click="$mdOpenMenu($index)")
-										i.fa.fa-calendar
-									md-menu-content(width="6", class="date-menu")
-										md-menu-item
-											input(type='date', ng-model="date", class="datepicker")
-											md-button.date-sender accept
+								//- md-menu(md-offset="20em 35em")
+								//- 	md-button.md-icon-button.gallery-datepicker-btn(ng-click="$mdOpenMenu($index)")
+								//- 		i.fa.fa-calendar
+								//- 	md-menu-content(width="6", class="date-menu")
+								//- 		md-menu-item
+								//- 			input(type='date', ng-model="date", class="datepicker")
+								//- 			md-button.date-sender accept
+								md-datepicker(ng-model="myDate")
 								md-menu(md-offset="20em 35em")
 									md-button.md-icon-button.gallery-search-btn(ng-click="$mdOpenMenu($index)")
 										i.fa.fa-search
@@ -77,14 +78,14 @@ div(data-ng-controller="galleryController as vm")
 				md-card-content
 					.widgets(layout="row")
 						.widget-1(flex="33")
-							.advert
+							.widget-block
 							h3.widget-h.md-title Widget 1
 						.widget-2(flex="33")
-							.advert
+							.widget-block
 							h3.widget-h.md-title Widget 2
 						.widget-3(layout="column", flex="33")
-							.advert(flex="50")
-							h3.widget-h.md-title(flex="50") Widget 3
+							.widget-block
+							h3.widget-h.md-title Widget 3
 				md-card-content.padding-bot-0
 					.gallery-foot(layout="row")
 						div(flex="75")

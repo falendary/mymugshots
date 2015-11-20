@@ -7,11 +7,15 @@
 
     'use strict';
 
+    var entityService = require('../services/entityService');
+
     module.exports = function($scope) {
 
         console.log('Detail controller started');
 
         var vm = this;
+
+    // Carousel scripts
 
     }
 

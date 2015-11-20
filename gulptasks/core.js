@@ -90,7 +90,8 @@
             'node_modules/angular-material/angular-material.js',
             'node_modules/angular-touch/angular-touch.js',
             'bower_components/slick-carousel/slick/slick.js',
-            'bower_components/angular-slick/dist/slick.js'
+            'bower_components/angular-slick/dist/slick.js',
+            'bower_components/angular-messages/angular-messages.js'
         ];
 
         return gulp.src(pathToJS)

@@ -12,26 +12,35 @@
     font-size: .8em;
   }
 }
-.datepicker {
-  margin: auto 0.7em;
-  font-size: 1rem;
-  width: 60%;
-  height: 40px;
-  border: 0.2em solid rgba(0,0,0,0.12);
-  border-radius: 0.4em;
+md-datepicker.md-default-theme, md-datepicker {
+  background-color: transparent;
 }
-md-menu-item {
-  > button.md-button.date-sender {
-    min-width: 0;
-    width: 4.2em;
-    background-color: transparent;
-    border: 0.2em solid rgba(0,0,0,0.12);
-    border-radius: 0.4em;
-    text-align: center;
-    font-size: 1rem;
-    padding: 0;
-  }
+.md-datepicker-input-container {
+  display: none;
 }
+.md-datepicker-calendar-pane {
+  background-color: #ffffff;
+}
+// .datepicker {
+//   margin: auto 0.7em;
+//   font-size: 1rem;
+//   width: 60%;
+//   height: 40px;
+//   border: 0.2em solid rgba(0,0,0,0.12);
+//   border-radius: 0.4em;
+// }
+// md-menu-item {
+//   > button.md-button.date-sender {
+//     min-width: 0;
+//     width: 4.2em;
+//     background-color: transparent;
+//     border: 0.2em solid rgba(0,0,0,0.12);
+//     border-radius: 0.4em;
+//     text-align: center;
+//     font-size: 1rem;
+//     padding: 0;
+//   }
+// }
 .seeker-dropmenu {
   height: 9em;
 }
@@ -122,7 +131,7 @@ md-card {
 .inf-margin {
   height: 15em;
 }
-.sm-advert {
+.advert {
   background-color: #e5e5e5;
 }
 .abBlock-h {
@@ -134,7 +143,8 @@ md-card {
   // font-family: RobotoBlack;
 }
 .widget-block {
-  background-color: #e5e5e5;
+  .advert();
+  height: 12em;
 }
 .widget-h {
   font-family: RobotoBold;
@@ -165,6 +175,22 @@ a.md-button.foot-link {
   &:hover {
     background-color: transparent;
   }
+}
+.detail-block {
+  margin: 0 2em
+}
+.upper-advert {
+  margin-bottom: 1em;
+  height: 25em;
+  .advert();
+}
+.bottom-advert {
+  margin-top: 1em;
+  height: 25em;
+  .advert();
+}
+.img-inf {
+  font-size: 2em;
 }
 @media screen and (max-width: 1199px) {
   .gallery-carousel {

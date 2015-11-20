@@ -38,9 +38,25 @@ div(data-ng-controller="detailController as vm")
 					div(layout="row")
 						.advert(flex="33")
 						.detail(flex="33")
+							.detail-block
+								h1.md-display-1.img-title Image Title Here
+								p.img-inf
+									|Date 11/13/2015
+								p.img-inf
+									|Info 1: Some text
+								p.img-inf
+									|Info 2: Some text
+								p.img-inf
+									|Info 3: Some text
+								p.img-inf
+									|Info 4: orem ipsum dolor sit amet, consectetur adipiscing elit. Donec non efficitur urna. Etiam id nisl rhoncus libero bibendum blandit. Donec convallis porttitor elementum. Phasellus massa enim, pulvinar non metus in, feugiat sollicitudin mauris.
+								p.img-inf
+									|Info 4: orem ipsum dolor sit amet, consectetur adipiscing elit. Donec non efficitur urna. Etiam id nisl rhoncus libero bibendum blandit. Donec convallis porttitor elementum. Phasellus massa enim, pulvinar non metus in, feugiat sollicitudin mauris.
 						.two-advert(layout="column", flex="33")
-							.advert(flex="50")
-							.advert(flex="50")
+							div(flex)
+								.upper-advert
+							div(flex)
+								.bottom-advert
 					div.gallery-carousel(data-ng-if="vm.slides")
 						slick(infinite="true", slides-to-show="4", slides-to-scroll="4", variable-width="true", arrows="false", class="gallery-slick", slick-dir="")
 							.item-car(data-ng-repeat="slide in vm.slides")
@@ -89,7 +105,7 @@ div(data-ng-controller="detailController as vm")
 						.widget-2(flex="33")
 							.widget-block
 							h3.widget-h.md-title Widget 2
-						.widget-3(flex="33")
+						.widget-3(layout="column", flex="33")
 							.widget-block
 							h3.widget-h.md-title Widget 3
 				md-card-content.padding-bot-0
