@@ -21,26 +21,6 @@ md-datepicker.md-default-theme, md-datepicker {
 .md-datepicker-calendar-pane {
   background-color: #ffffff;
 }
-// .datepicker {
-//   margin: auto 0.7em;
-//   font-size: 1rem;
-//   width: 60%;
-//   height: 40px;
-//   border: 0.2em solid rgba(0,0,0,0.12);
-//   border-radius: 0.4em;
-// }
-// md-menu-item {
-//   > button.md-button.date-sender {
-//     min-width: 0;
-//     width: 4.2em;
-//     background-color: transparent;
-//     border: 0.2em solid rgba(0,0,0,0.12);
-//     border-radius: 0.4em;
-//     text-align: center;
-//     font-size: 1rem;
-//     padding: 0;
-//   }
-// }
 .seeker-dropmenu {
   height: 9em;
 }
@@ -51,7 +31,7 @@ md-datepicker.md-default-theme, md-datepicker {
     border-width: 0.2em;
     border-radius: 0.8em;
     height: 2.6em;
-    font-size: 2em;
+    font-size: 0.9rem;
     padding-left: 1em;
   }
 }
@@ -76,21 +56,30 @@ md-menu-item {
     font-size: 2em;
   }
 }
-md-card {
-  box-shadow: none;
+.slide-wrap {
+  height: 100%;
+}
+.rn-carousel-custom {
+  height: 610px;
+  li.item-car {
+    width: 90%;
+  }
 }
 .gallery-item {
-  height: 40%;
-  padding: 0 0 1em 0;
+  display: inline-block;
+  width: 25%;
+  overflow: hidden;
   &-photo {
-    //width: 160px;
-    //height: 200px;
-    overflow: hidden;
     img {
-      height: 100%;
+      display: block;
+      width: 160px;
+      height: 200px;
+      margin: 2em auto 0;
     }
   }
   &-title {
+    color: #64B5F6;
+    cursor: pointer;
     text-align: center;
     margin-top: 1em;
     margin-bottom: .5em;
@@ -103,12 +92,6 @@ md-card {
 }
 .gallery-carousel {
   margin-bottom: 2em;
-  .item-car {
-    width: 80%;
-  }
-  md-grid-list {
-    margin-right: 1rem;
-  }
 }
 .ltAd {
   width: 49%;
@@ -192,6 +175,13 @@ a.md-button.foot-link {
 .img-inf {
   font-size: 2em;
 }
+// Detail page
+.recent-v-wrap {
+  width: 16.6%;
+}
+.recent-h {
+  margin-left: 0.4rem;
+}
 @media screen and (max-width: 1199px) {
   .gallery-carousel {
     .item-car {
@@ -222,15 +212,5 @@ a.md-button.foot-link {
       margin-bottom: 2em;
       color: rgb(63,81,181);
     }
-  }
-}
-.gallery-item-title {
-  color: #64B5F6;
-  cursor: pointer;
-}
-.rn-carousel-custom {
-  height: 500px;
-  li {
-    width: 80%;
   }
 }

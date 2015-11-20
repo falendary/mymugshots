@@ -57,20 +57,27 @@ div(data-ng-controller="detailController as vm")
 								.upper-advert
 							div(flex)
 								.bottom-advert
-					div.gallery-carousel(data-ng-if="vm.slides")
-						slick(infinite="true", slides-to-show="4", slides-to-scroll="4", variable-width="true", arrows="false", class="gallery-slick", slick-dir="")
-							.item-car(data-ng-repeat="slide in vm.slides")
-								md-grid-list(
-									md-cols="1",
-									md-row-height="1:1.6",
-									md-gutter="1em")
-									md-grid-title
-										md-card(flex="100")
-											.gallery-item
-												.gallery-item-photo
-													img(data-ng-src="{{item.image_url}}", alt="{{item.first_name}}")
-												.gallery-item-title(data-ng-bind="::item.first_name")
-												.gallery-item-date(data-ng-bind="::item.booking_datetime | date:'dd.mm.yyyy'")
+				md-card-content
+					h3.recent-h.md-title Recently viewed
+					div(layout="row")
+						.recent-v-wrap
+							md-card
+								img(src="http://lorempixel.com/output/animals-h-c-323-369-1.jpg", alt="Lorem impsum")
+								md-card-content
+									.gallery-item-title Title here
+									.gallery-item-date DD.MM.YYYY
+						.recent-v-wrap
+							md-card
+								img(src="http://lorempixel.com/output/animals-h-c-323-369-1.jpg", alt="Lorem impsum")
+								md-card-content
+									.gallery-item-title Title here
+									.gallery-item-date DD.MM.YYYY
+						.recent-v-wrap
+							md-card
+								img(src="http://lorempixel.com/output/animals-h-c-323-369-1.jpg", alt="Lorem impsum")
+								md-card-content
+									.gallery-item-title Title here
+									.gallery-item-date DD.MM.YYYY
 				md-card-content
 					div(layout="row")
 						.ltAd
