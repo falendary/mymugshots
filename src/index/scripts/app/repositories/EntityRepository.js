@@ -3,19 +3,37 @@
  *
  */
 
-(function(){
+(function () {
 
-    var remotehost = '';
-    var baseUrl = '';
+    var remotehost = 'http://352mugshots.com/';
+    var baseUrl = 'api/V1/';
 
-    var getEntitiesByRange = function(min, max) {
-        return fetch().then(function(data){
+    var getEntitiesByRange = function (min, max) {
+        return fetch(remotehost + baseUrl + 'inmates/4/' + min + '-' + max, {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json',
+                'Content-type': 'application/json'
+            }
+        }).then(function (data) {
             return data.json();
         })
     };
 
-    var getEntitiesByRangeDev = function(min, max) {
-        return fetch(min + '-' + max + '.json').then(function(data){
+    var getEntityById = function (id) {
+        return fetch(remotehost + baseUrl + 'inmate/' + id, {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).then(function (data) {
+            return data.json();
+        })
+    };
+
+    var getEntitiesByRangeDev = function (min, max) {
+        return fetch(min + '-' + max + '.json').then(function (data) {
             return data.json();
         })
     };

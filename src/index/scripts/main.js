@@ -13,7 +13,7 @@
         'ngAnimate',
         'ngMaterial',
         'ui.router',
-        'slick'
+        'angular-carousel'
     ]);
 
     app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', require('./app/router')]);
