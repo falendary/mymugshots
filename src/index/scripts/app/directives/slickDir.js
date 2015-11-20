@@ -3,39 +3,45 @@
 
 	module.exports = function () {
 		return {
-			restrict: 'A',
+			restrict: 'AE',
+			scope: {
+				callback: '&'
+			},
 			link: function (scope, elem, attrs) {
 				var windowWth = window.innerWidth;
+				var gallery = $('.gallery-slick');
+
 				if (windowWth >= 1200) {
-					attrs.slidesToShow = '4';
-					attrs.slidesToScroll = '4';
+					gallery.attr('slides-to-show', 4);
+					gallery.attr('slides-to-scroll', 4);
 				}
 				else if (windowWth < 1200) {
 					if (windowWth < 768) {
-						attrs.slidesToShow = '2';
-						attrs.slidesToScroll = '2';
+						gallery.attr('slides-to-show', 2);
+						gallery.attr('slides-to-scroll', 2);
 					}
 					else {
-						attrs.slidesToShow = '3';
-						attrs.slidesToScroll = '3';
+						gallery.attr('slides-to-show', 2);
+						gallery.attr('slides-to-scroll', 2);
 					}
-				};
+				}
 				var swipeCounter = 0;
-				$('.gallery-slick').on('swipe', function(event, slick, direction) {
+				gallery.on('swipe', function(event, slick, direction) {
 					if (direction == 'left') {
 						swipeCounter -= 1;
 					}
 					else if (direction == 'right') {
 						swipeCounter += 1;
-					};
-					if (swipeCounter == 3 || swipeCounter == -3) {
+					}
+					if (swipeCounter == 2 || swipeCounter == -2) {
 						swipeCounter = 0;
 						callBackFun();
 					}
 				});
 				function callBackFun() {
-					console.log('Third slide');
-				};
+					console.log('second slide');
+					scope.callback(); // - это колбек для закачки новых данных
+				}
 			}
 		}
 	}

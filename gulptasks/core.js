@@ -38,7 +38,7 @@
 
         var pathToLESS = [
             'node_modules/angular-material/angular-material.css',
-            'bower_components/slick-carousel/slick/slick.css'
+            'node_modules/angular-carousel/dist/angular-carousel.css'
         ];
 
         return gulp.src(pathToLESS)
@@ -89,8 +89,7 @@
             'node_modules/angular-aria/angular-aria.js',
             'node_modules/angular-material/angular-material.js',
             'node_modules/angular-touch/angular-touch.js',
-            'bower_components/slick-carousel/slick/slick.js',
-            'bower_components/angular-slick/dist/slick.js',
+            'node_modules/angular-carousel/dist/angular-carousel.js',
             'bower_components/angular-messages/angular-messages.js'
         ];
 

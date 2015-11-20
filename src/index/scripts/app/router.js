@@ -23,7 +23,7 @@
             .state('app.item', {
                 url: '/item/:id',
                 templateUrl: 'detail.html'
-            }),
+            });
 
 
         //$locationProvider.html5Mode({
