@@ -33,8 +33,9 @@
 
     app.controller('shellController', ['$scope', require('./app/controllers/shellController')]);
     app.controller('landingController', ['$scope', require('./app/controllers/landingController')]);
-    app.controller('galleryController', ['$scope', require('./app/controllers/galleryController')]);
-    app.controller('detailController', ['$scope', require('./app/controllers/detailController')]);
+    app.controller('galleryController', ['$scope', '$stateParams',  require('./app/controllers/galleryController')]);
+    app.controller('detailController', ['$scope', '$stateParams', require('./app/controllers/detailController')]);
+    app.controller('interfaceController', ['$scope', '$state', require('./app/controllers/interfaceController')]);
 
     app.directive('slickDir', [require('./app/directives/slickDir')]);
 

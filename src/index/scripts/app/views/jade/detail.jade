@@ -1,127 +1,52 @@
 div(data-ng-controller="detailController as vm")
-	md-content.md-padding(flex)
-		div(layout="row", layout-align="center center")
-			md-card(flex-gt-sm="90", flex-gt-md="80").md-default-theme
-				md-card-content
-					.catal-logo-row(layout="row")
-						a(href="#" class="catal-logo-a") Site Title / Logo
-					md-toolbar.gallery-toolbar
-						div.md-toolbar-tools
-							div.nav-tools
-								md-menu(md-offset="20em 35em")
-									md-button.md-icon-button.gallery-datepicker-btn(ng-click="$mdOpenMenu($index)")
-										i.fa.fa-calendar
-									md-menu-content(width="6", class="date-menu")
-										md-menu-item
-											input(type='date', ng-model="date", class="datepicker")
-											md-button.date-sender accept
-								md-menu(md-offset="20em 35em")
-									md-button.md-icon-button.gallery-search-btn(ng-click="$mdOpenMenu($index)")
-										i.fa.fa-search
-									md-menu-content(width="6", class="seeker-dropmen")
-										md-menu-item
-											md-input-container.seeker-inputmenu
-												input(name="search", class="seeker-input md-body-1")
-											md-button.seeker-subbtn
-												i.fa.fa-search
-							div.nav-links
-								md-button
-									| Today
-								md-button
-									| Yesterday
-								md-button
-									| Last Week
-								md-button
-									| The Month
-							p.filter-txt text explaining filter result
-				md-card-content
-					div(layout="row")
-						.advert(flex="33")
-						.detail(flex="33")
-							.detail-block
-								h1.md-display-1.img-title Image Title Here
-								p.img-inf
-									|Date 11/13/2015
-								p.img-inf
-									|Info 1: Some text
-								p.img-inf
-									|Info 2: Some text
-								p.img-inf
-									|Info 3: Some text
-								p.img-inf
-									|Info 4: orem ipsum dolor sit amet, consectetur adipiscing elit. Donec non efficitur urna. Etiam id nisl rhoncus libero bibendum blandit. Donec convallis porttitor elementum. Phasellus massa enim, pulvinar non metus in, feugiat sollicitudin mauris.
-								p.img-inf
-									|Info 4: orem ipsum dolor sit amet, consectetur adipiscing elit. Donec non efficitur urna. Etiam id nisl rhoncus libero bibendum blandit. Donec convallis porttitor elementum. Phasellus massa enim, pulvinar non metus in, feugiat sollicitudin mauris.
-						.two-advert(layout="column", flex="33")
-							div(flex)
-								.upper-advert
-							div(flex)
-								.bottom-advert
-				md-card-content
-					h3.recent-h.md-title Recently viewed
-					div(layout="row")
-						.recent-v-wrap
-							md-card
-								img(src="http://lorempixel.com/output/animals-h-c-323-369-1.jpg", alt="Lorem impsum")
-								md-card-content
-									.gallery-item-title Title here
-									.gallery-item-date DD.MM.YYYY
-						.recent-v-wrap
-							md-card
-								img(src="http://lorempixel.com/output/animals-h-c-323-369-1.jpg", alt="Lorem impsum")
-								md-card-content
-									.gallery-item-title Title here
-									.gallery-item-date DD.MM.YYYY
-						.recent-v-wrap
-							md-card
-								img(src="http://lorempixel.com/output/animals-h-c-323-369-1.jpg", alt="Lorem impsum")
-								md-card-content
-									.gallery-item-title Title here
-									.gallery-item-date DD.MM.YYYY
-				md-card-content
-					div(layout="row")
-						.ltAd
-						.rtAd
-				md-card-content
-					div(layout='row')
-						div(flex="66")
-							.about-block
-								h4.abBlock-h.md-title About Block
-								p.abBlock-p
-									|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet commodo nibh. Proin venenatis lobortis venenatis. Nulla facilisi. Nulla facilisi. liquam rutrum tortor a lorem malesuada, sed lobortis ipsum iaculis. Ut in augue ac risus viverra lobortis vestibulum in nibh. Integer vitae sodales lorem. 
-								p.abBlock-p
-									|Morbi laoreet erat lorem, ut dictum ante ultricies sed. Sed lacinia purus erat, eu accumsan diam sagittis et. Phasellus dictum arcu sed nibh pretium, vitae blandit augue dignissim.
-								p.abBlock-p
-									|Maecenas commodo mauris enim, ut semper ex luctus vitae. Ut a tempor libero. Fusce mauris orci, facilisis id magna quis, porttitor imperdiet massa. terdum et malesuada fames ac ante ipsum primis in faucibus.
-								p.abBlock-p
-									|Fusce vehicula velit massa, ut convallis massa lacinia eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque consequat vitae erat eget vehicula. Ut interdum odio ac erat porttitor, dapibus tempus risus mattis. Ut elementum quis tellus quis maximus.
-						div(layout="column", flex='33')
-							.inf-block(flex)
-								.inf-margin
-									h4.abBlock-h.md-title Info Block
-									p.abBlock-p
-										|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dictum arcu sed nibh pretium, vitae blandit augue dignissim.
-									p.abBlock-p
-										|Nullam sit amet commodo nibh. Proin venenatis lobortis venenatis.
-							.sm-advert(flex)
-				md-card-content
-					.widgets(layout="row")
-						.widget-1(flex="33")
-							.widget-block
-							h3.widget-h.md-title Widget 1
-						.widget-2(flex="33")
-							.widget-block
-							h3.widget-h.md-title Widget 2
-						.widget-3(layout="column", flex="33")
-							.widget-block
-							h3.widget-h.md-title Widget 3
-				md-card-content.padding-bot-0
-					.gallery-foot(layout="row")
-						div(flex="75")
-							p.rights
-								|<i class="fa fa-copyright"></i> <a href="#" class='sitename-link'>SiteName 2015
-						div(flex="25")
-							md-list.foot-list(layout-align='end end')
-								md-button(href="#", class="foot-link") Link 1
-								md-button(href="#", class="foot-link") Link 1
-								md-button(href="#", class="foot-link") Link 1
+	md-card-content(data-ng-if="vm.entity")
+		div(layout="row")
+			.advert(flex="33")
+			.detail(flex="33")
+				.detail-block
+					h1.md-display-1.img-title
+						|{{vm.entity.last_name}} {{vm.entity.first_name}}
+					p.img-inf
+						|Date 11/13/2015
+					p.img-inf
+						|Booking Number: {{vm.entity.booking_id}}
+					p.img-inf
+						|Booking on: {{vm.entity.booking_datetime | date:'dd.MM.yyyy'}}
+					p.img-inf
+						|Info 3: Some text
+					p.img-inf
+						div(data-ng-repeat="charge in vm.entity.agency_offenses.charges")
+							p.charge-level
+								|{{charge.level}}
+							p.charge-description
+								|{{charge.description}}
+
+			.two-advert(layout="column", flex="33")
+				div(flex)
+					.upper-advert
+				div(flex)
+					.bottom-advert
+	div.loader-holder(data-ng-hide="vm.entity")
+		.loader
+			i.fa.fa-spinner.fa-spin
+	md-card-content
+		h3.recent-h.md-title Recently viewed
+		div(layout="row")
+			.recent-v-wrap
+				md-card
+					img(src="http://lorempixel.com/output/animals-h-c-323-369-1.jpg", alt="Lorem impsum")
+					md-card-content
+						.gallery-item-title Title here
+						.gallery-item-date DD.MM.YYYY
+			.recent-v-wrap
+				md-card
+					img(src="http://lorempixel.com/output/animals-h-c-323-369-1.jpg", alt="Lorem impsum")
+					md-card-content
+						.gallery-item-title Title here
+						.gallery-item-date DD.MM.YYYY
+			.recent-v-wrap
+				md-card
+					img(src="http://lorempixel.com/output/animals-h-c-323-369-1.jpg", alt="Lorem impsum")
+					md-card-content
+						.gallery-item-title Title here
+						.gallery-item-date DD.MM.YYYY

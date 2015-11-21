@@ -38,10 +38,32 @@
         })
     };
 
+    var getEntitiesByPhrase = function (phrase) {
+        return fetch(remotehost + baseUrl + 'inmates/4/?phrase=' + phrase).then(function (data) {
+            return data.json();
+        })
+    };
+
+    var getEntitiesByQuery = function (query) {
+        return fetch(remotehost + baseUrl + 'inmates/4/?query=' + query).then(function (data) {
+            return data.json();
+        })
+    };
+
+    var getEntitiesByDatetime = function (from, to) {
+        return fetch(remotehost + baseUrl + 'inmates/4/?fromdate=' + from + '&todate=' + to).then(function (data) {
+            return data.json();
+        })
+    };
+
 
     module.exports = {
         getEntitiesByRange: getEntitiesByRange,
-        getEntitiesByRangeDev: getEntitiesByRangeDev
+        getEntitiesByRangeDev: getEntitiesByRangeDev,
+        getEntityById: getEntityById,
+        getEntitiesByPhrase: getEntitiesByPhrase,
+        getEntitiesByQuery: getEntitiesByQuery,
+        getEntitiesByDatetime: getEntitiesByDatetime
     }
 
 }());
