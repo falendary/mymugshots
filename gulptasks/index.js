@@ -83,6 +83,10 @@
             .pipe(minifyCSS({keepBreaks: false, keepSpecialComments: false}))
             .pipe(rename({basename: 'main', suffix: '.min', extname: '.css'}))
             .pipe(gulp.dest('dist/' + appName + '/content/css/'))
+<<<<<<< HEAD
+=======
+            .pipe(connect.reload());
+>>>>>>> 4d1cd6c91fdfc500d6fde2ee7eb06479c43a205b
     });
 
     gulp.task('index-min-JS', function () {
@@ -112,16 +116,29 @@
     });
 
     gulp.task('jade', function() {
+<<<<<<< HEAD
          var pathToHTMLAll = [
+=======
+        var pathToHTMLAll = [
+>>>>>>> 4d1cd6c91fdfc500d6fde2ee7eb06479c43a205b
             'src/' + appName + '/scripts/app/views/jade/**/*.jade', !'src/' + appName + '/scripts/app/views/jade/utils/*.jade'
         ];
         // gulp.src(['src/index/scripts/app/views/jade/**/*.jade', 'src/index/scripts/app/views/jade/**/*.jade'])
         return gulp.src(pathToHTMLAll)
+<<<<<<< HEAD
         .pipe(jade({
             pretty: true
         }))
             .on('error', console.log)
         .pipe(gulp.dest('src/index/scripts/app/views/'))
+=======
+            .pipe(jade({
+                pretty: true
+            }))
+            .on('error', console.log)
+            .pipe(gulp.dest('src/index/scripts/app/views/'))
+            .pipe(connect.reload());
+>>>>>>> 4d1cd6c91fdfc500d6fde2ee7eb06479c43a205b
     });
 
     gulp.task('index-HTML-to-JS', function () {
@@ -163,6 +180,7 @@
 
     });
 
+<<<<<<< HEAD
     // gulp.task('http-server', function() {
     //     connect.server(
     //     {
@@ -170,11 +188,14 @@
     //         livereload: true
     //     });
     // });
+=======
+>>>>>>> 4d1cd6c91fdfc500d6fde2ee7eb06479c43a205b
 
     gulp.task('index-min-All', ['index-min-IndexHTML', 'index-min-LESS', 'index-min-JS', 'index-min-IMG', 'index-min-Fonts']);
 
     // Watchers
     gulp.task('index-watch-min', ['index-min-All'], function () {
+<<<<<<< HEAD
         // livereload.listen(1452);
         gulp.watch('src/**/*.{css,less}', ['index-min-LESS']);
         // gulp.watch('src/**/*.jade', ['jade']);
@@ -182,6 +203,13 @@
         gulp.watch('src/index/content/fonts/*.{otf,eot,ttf,woff,woff2,eof,svg}', ['index-min-Fonts']);
         gulp.watch('src/index/content/**/*.{jpg,gif,png}', ['index-min-IMG']);
         //livereload.reload(['landing.html']);
+=======
+        gulp.watch('src/**/*.{css,less}', ['index-min-LESS']);
+        gulp.watch('src/**/*.js', ['index-min-JS']);
+        gulp.watch('src/**/*.html', ['index-HTML-to-JS']);
+        gulp.watch('src/index/content/fonts/*.{otf,eot,ttf,woff,woff2,eof,svg}', ['index-min-Fonts']);
+        gulp.watch('src/index/content/**/*.{jpg,gif,png}', ['index-min-IMG']);
+>>>>>>> 4d1cd6c91fdfc500d6fde2ee7eb06479c43a205b
         gulp.watch('src/**/*.html', ['index-HTML-to-JS']);
         gulp.watch('src/**/*.jade', ['index-jade-to-HTML']);
     });

@@ -1,0 +1,28 @@
+/**
+ * Created by sergey on 21.11.15.
+ */
+
+(function(){
+
+    'use strict';
+
+    module.exports = function($scope, $state) {
+
+        var vm = this;
+
+        console.log('Interface controller initialized...');
+
+        vm.searchMate = function(){
+            console.log('Searching...');
+            $state.go('app.gallery', {query: vm.searchQuery}, {reload: true});
+        };
+
+        vm.filterByDate = function() {
+            console.log('filterByDate', vm.filterDate);
+            $state.go('app.gallery', {datetime: vm.filterDate}, {reload: true});
+        }
+
+    }
+
+
+}());

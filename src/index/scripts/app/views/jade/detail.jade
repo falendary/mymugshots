@@ -1,4 +1,5 @@
 div(data-ng-controller="detailController as vm")
+<<<<<<< HEAD
 	md-content.md-padding(flex)
 		div(layout="row", layout-align="center center")
 			md-card(flex-gt-sm="90", flex-gt-md="80").md-default-theme.box-shadow-none
@@ -124,3 +125,56 @@ div(data-ng-controller="detailController as vm")
 								md-button(href="#", class="foot-link") Link 1
 								md-button(href="#", class="foot-link") Link 1
 								md-button(href="#", class="foot-link") Link 1
+=======
+	md-card-content(data-ng-if="vm.entity")
+		div(layout="row")
+			.advert(flex="33")
+			.detail(flex="33")
+				.detail-block
+					h1.md-display-1.img-title
+						|{{vm.entity.last_name}} {{vm.entity.first_name}}
+					p.img-inf
+						|Date 11/13/2015
+					p.img-inf
+						|Booking Number: {{vm.entity.booking_id}}
+					p.img-inf
+						|Booking on: {{vm.entity.booking_datetime | date:'dd.MM.yyyy'}}
+					p.img-inf
+						|Info 3: Some text
+					p.img-inf
+						div(data-ng-repeat="charge in vm.entity.agency_offenses.charges")
+							p.charge-level
+								|{{charge.level}}
+							p.charge-description
+								|{{charge.description}}
+
+			.two-advert(layout="column", flex="33")
+				div(flex)
+					.upper-advert
+				div(flex)
+					.bottom-advert
+	div.loader-holder(data-ng-hide="vm.entity")
+		.loader
+			i.fa.fa-spinner.fa-spin
+	md-card-content
+		h3.recent-h.md-title Recently viewed
+		div(layout="row")
+			.recent-v-wrap
+				md-card
+					img(src="http://lorempixel.com/output/animals-h-c-323-369-1.jpg", alt="Lorem impsum")
+					md-card-content
+						.gallery-item-title Title here
+						.gallery-item-date DD.MM.YYYY
+			.recent-v-wrap
+				md-card
+					img(src="http://lorempixel.com/output/animals-h-c-323-369-1.jpg", alt="Lorem impsum")
+					md-card-content
+						.gallery-item-title Title here
+						.gallery-item-date DD.MM.YYYY
+			.recent-v-wrap
+				md-card
+					img(src="http://lorempixel.com/output/animals-h-c-323-369-1.jpg", alt="Lorem impsum")
+					md-card-content
+						.gallery-item-title Title here
+						.gallery-item-date DD.MM.YYYY
+>>>>>>> 4d1cd6c91fdfc500d6fde2ee7eb06479c43a205b
