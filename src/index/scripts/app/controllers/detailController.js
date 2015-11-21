@@ -26,9 +26,67 @@
             console.log('vm.entity', vm.entity);
             vm.entity.booking_datetime = new Date(vm.entity.booking_datetime).getTime();
 
-            $scope.$apply();
+            if (getCookie('recentlyItems')) {
+                vm.recentlyItems = JSON.parse(getCookie('recentlyItems'));
+                console.log('vm.recentlyItems', vm.recentlyItems);
+                $scope.$apply();
+
+                if (!containsObject(vm.entity, vm.recentlyItems)) {
+                    if (vm.recentlyItems.length === 6) {
+                        vm.recentlyItems.splice(5, 1);
+                    }
+                    vm.recentlyItems.unshift(vm.entity);
+                }
+                setCookie('recentlyItems', JSON.stringify(vm.recentlyItems), 30);
+            } else {
+                setCookie('recentlyItems', JSON.stringify([vm.entity]), 30);
+            }
 
         });
+
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+d.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1);
+                if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+            }
+            return "";
+        }
+
+        function deleteAllCookies() {
+            var cookies = document.cookie.split(";");
+
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                var eqPos = cookie.indexOf("=");
+                var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+            }
+        }
+
+        function containsObject(obj, list) {
+            var i;
+            for (i = 0; i < list.length; i++) {
+                if (list[i].booking_id === obj.booking_id) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        //deleteAllCookies();
+
+
     }
 
 }());
