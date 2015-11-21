@@ -1,14 +1,14 @@
 div(data-ng-controller="interfaceController as vm")
     md-content.md-padding(flex)
         div(layout="row", layout-align="center center")
-            md-card(flex-gt-sm="90", flex-gt-md="80").md-default-theme
+            md-card(flex-gt-sm="90", flex-gt-md="80").md-default-theme.box-shadow-none
                 md-card-content
                     .catal-logo-row(layout="row")
                         a(href="#" class="catal-logo-a") Site Title / Logo
                     md-toolbar.gallery-toolbar
-                        div.md-toolbar-tools
-                            div.nav-tools
-                                md-datepicker(data-ng-model="vm.filterDate" data-ng-change="vm.filterByDate()")
+                        div(layout="row", layout-wrap).md-toolbar-tools.nav-tools
+                            div(flex-sm="80", flex-order-sm="1").nav-tools
+                                md-datepicker(data-ng-model="vm.filterDate", data-ng-change="vm.filterByDate()", class="nav-datepicker")
                                 md-menu(md-offset="20em 35em")
                                     md-button.md-icon-button.gallery-search-btn(ng-click="$mdOpenMenu($index)")
                                         i.fa.fa-search
@@ -16,26 +16,29 @@ div(data-ng-controller="interfaceController as vm")
                                         md-menu-item
                                             md-input-container.seeker-inputmenu
                                                 input(name="search", class="seeker-input md-body-1", data-ng-model="vm.searchQuery")
-                                            md-button.seeker-subbtn(data-ng-click="vm.searchMate()")
+                                            md-button.seeker-subbtn.md-primary(data-ng-click="vm.searchMate()")
                                                 i.fa.fa-search
-                            div.nav-links
-                                md-button(data-ui-sref="app.gallery({ phrase: 'today'})", ui-sref-opts="{reload: true}")
+                            div(flex-sm="20", flex-order-sm="2", hide show-sm)
+                                md-button.menu-trig
+                                    span.button-desh
+                                    span.button-desh
+                                    span.button-desh
+                            div.nav-filter(flex-sm="100", flex-order-sm="3", hide-sm, layout-sm="column")
+                                md-button.filter-btn(data-ui-sref="app.gallery({ phrase: 'today'})", ui-sref-opts="{reload: true}")
                                     | Today
-                                md-button(data-ui-sref="app.gallery({ phrase: 'yesterday'})", ui-sref-opts="{reload: true}")
+                                md-button.filter-btn(data-ui-sref="app.gallery({ phrase: 'yesterday'})", ui-sref-opts="{reload: true}")
                                     | Yesterday
-                                md-button(data-ui-sref="app.gallery({ phrase: 'lastweek'})", ui-sref-opts="{reload: true}")
+                                md-button.filter-btn(data-ui-sref="app.gallery({ phrase: 'lastweek'})", ui-sref-opts="{reload: true}")
                                     | Last Week
-                                md-button(data-ui-sref="app.gallery({ phrase: 'month'})", ui-sref-opts="{reload: true}")
+                                md-button.filter-btn(data-ui-sref="app.gallery({ phrase: 'month'})", ui-sref-opts="{reload: true}")
                                     | The Month
                             //p.filter-txt text explaining filter result
                 div(data-ui-view>)
-
 
                 md-card-content
                     div(layout="row")
                         .ltAd
                         .rtAd
-
                 md-card-content
                     div(layout='row')
                         div(flex="66")
