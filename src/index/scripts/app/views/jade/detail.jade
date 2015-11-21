@@ -1,8 +1,8 @@
 div(data-ng-controller="detailController as vm")
 	md-content.md-padding(flex)
 		div(layout="row", layout-align="center center")
-			md-card(flex-gt-sm="90", flex-gt-md="80").md-default-theme
-				md-card-content
+			md-card(flex-gt-sm="90", flex-gt-md="80").md-default-theme.box-shadow-none
+				md-card-content.overflow-h
 					.catal-logo-row(layout="row")
 						a(href="#" class="catal-logo-a") Site Title / Logo
 					md-toolbar.gallery-toolbar
@@ -24,7 +24,7 @@ div(data-ng-controller="detailController as vm")
 												input(name="search", class="seeker-input md-body-1")
 											md-button.seeker-subbtn
 												i.fa.fa-search
-							div.nav-links
+							div(hide-sm).nav-filter
 								md-button
 									| Today
 								md-button
@@ -33,7 +33,11 @@ div(data-ng-controller="detailController as vm")
 									| Last Week
 								md-button
 									| The Month
-							p.filter-txt text explaining filter result
+								p.filter-txt text explaining filter result
+							md-button(hide show-sm).menu-trig
+								span.button-desh
+								span.button-desh
+								span.button-desh
 				md-card-content
 					div(layout="row")
 						.advert(flex="33")

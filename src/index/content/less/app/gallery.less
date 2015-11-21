@@ -1,5 +1,34 @@
+@keyframes menuopen {
+  from {max-height: 0;}
+  to {max-height: 50rem;}
+}
+@keyframes menuclose {
+  from {max-height: 50rem;}
+  to {max-height: 0;}
+}
 .padding-bot-0 {
   padding-bottom: 0;
+}
+.box-shadow-none {
+  box-shadow: none;
+}
+.overflow-h {
+  overflow: hidden;
+}
+.display-block {
+  display: block;
+}
+.navFiltActive {
+  animation-name: menuopen;
+  animation-timing-function: linear;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+.navFiltInactive {
+  animation-name: menuclose;
+  animation-duration: 0.4ses;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 .gallery-toolbar {
   margin-left: -16px;
@@ -10,6 +39,23 @@
   }
   .filter-txt {
     font-size: .8em;
+    display: inline-block;
+  }
+}
+.menu-trig {
+  min-width: 4rem;
+  height: 2.8rem;
+  padding: 0.6rem;
+  border: 0.2rem solid #ffffff;
+  border-radius: 0.6rem;
+}
+.button-desh {
+  width: 100%;
+  height: 0.2rem;
+  background-color: #ffffff;
+  display: block;
+  &:not(:last-child) {
+    margin-bottom: 0.3rem;
   }
 }
 md-datepicker.md-default-theme, md-datepicker {
@@ -29,26 +75,26 @@ md-datepicker.md-default-theme, md-datepicker {
   width: 75%;
   input.seeker-input {
     border-width: 0.2em;
-    border-radius: 0.8em;
     height: 2.6em;
     font-size: 0.9rem;
     padding-left: 1em;
+    border-color: rgba(0,0,0,0.3);
   }
 }
 md-menu-item {
-  > button.md-button.seeker-subbtn {
+  > button.md-button.seeker-subbtn.md-primary {
     min-width: 0;
     width: 3.5em;
     height: 2.6em;
-    background-color: transparent;
-    border-width: 0.2em;
-    border-style: solid;
-    border-radius: 5em;
+    background-color: rgb(63,81,181);
     padding: 0;
     text-align: center;
     font-size: 1rem;
-    border-color: rgba(0,0,0,0.12);
-    color: rgba(0,0,0,0.12);
+    // border-color: rgba(0,0,0,0.12);
+    color: #ffffff;
+    &:hover:not([disabled]), :hover {
+      background-color: rgba(63,81,181, 0.9);
+    }
   }
 }
 .catal-logo-row {
@@ -92,6 +138,17 @@ md-menu-item {
 }
 .gallery-carousel {
   margin-bottom: 2em;
+}
+.loader-holder {
+  text-align: center;
+  .loader {
+    i {
+      font-size: 11em;
+      margin-top: 2em;
+      margin-bottom: 2em;
+      color: rgb(63,81,181);
+    }
+  }
 }
 .ltAd {
   width: 49%;
@@ -188,6 +245,29 @@ a.md-button.foot-link {
       width: 43em;
     }
   }
+  .gallery-item-photo {
+    img {
+      width: 100%;
+    }
+  }
+  .gallery-toolbar {
+    .filter-txt {
+      display: block;
+      margin: 0.4rem 0 0.4rem 0rem;
+      text-align: right;
+    }
+  }
+  .md-toolbar-tools {
+    button.filter-btn.md-button {
+      min-height: 1.5em;
+      height: 0.6em;
+      margin-top: 0.4rem;
+      span {
+        position: relative;
+        bottom: 0.5rem;
+      }
+    }
+  }
 }
 @media screen and (max-width: 959px) {
   .gallery-carousel {
@@ -195,22 +275,83 @@ a.md-button.foot-link {
       width: 45em;
     }
   }
+  .md-toolbar-tools {
+    button.filter-btn.md-button {
+      font-size: 0.7em;
+    }
+  }
 }
 @media screen and (max-width: 767px) {
+  .md-toolbar-tools.nav-tools {
+    height: auto;
+    max-height: 50rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .nav-datepicker {
+    display: block;
+  }
+  .nav-datepicker .md-button.md-icon-button, .md-button.md-icon-button.gallery-search-btn {
+    width: 2rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    height: 2em;
+    md-icon, md-menu {
+     vertical-align: baseline;
+    }
+  }
+  button.filter-btn.md-button {
+   min-width: 4rem;
+   margin-left: 0.3rem;
+  }
   .gallery-carousel {
-    .item-car {
+    .item-car, i {
       width: 67em;
     }
   }
 }
-.loader-holder {
-  text-align: center;
-  .loader {
-    i {
-      font-size: 11em;
-      margin-top: 2em;
-      margin-bottom: 2em;
-      color: rgb(63,81,181);
+@media screen and (max-width: 599px) {
+  .nav-datepicker {
+    display: inline-block;
+  }
+  .nav-datepicker .md-button.md-icon-button, .md-button.md-icon-button.gallery-search-btn {
+    width: 48px;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: auto;
+    md-icon, md-menu {
+      vertical-align: middle;
     }
+  }
+  .layout-row > .flex-sm-100.nav-filter {
+    max-height: 0;
+  }
+  .nav-filter {
+    border-top: 0.1rem solid #ffffff;
+    margin-top: 1rem;
+  } 
+  .md-toolbar-tools {
+    overflow: hidden;
+    button.filter-btn.md-button {
+      font-size: 0.8em;
+      min-width: 88px;
+      margin: 0.6rem 0;
+      min-height: 36px;
+      height: auto;
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+      text-align: left;
+      span {
+        position: static;
+        bottom: auto;
+      }
+    }
+  }
+  .gallery-toolbar {
+   .filter-txt {
+    padding: 1.1rem 0 0 0.7rem;
+    border-top: 0.1rem solid #ffffff;
+    text-align: left; 
+   }
   }
 }

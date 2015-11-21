@@ -1,14 +1,14 @@
 div(data-ng-controller="galleryController as vm")
 	md-content.md-padding(flex)
 		div(layout="row", layout-align="center center")
-			md-card(flex-gt-sm="90", flex-gt-md="80").md-default-theme
+			md-card(flex-gt-sm="90", flex-gt-md="80").md-default-theme.box-shadow-none
 				md-card-content
 					.catal-logo-row(layout="row")
 						a(href="#" class="catal-logo-a") Site Title / Logo
 					md-toolbar.gallery-toolbar
-						div.md-toolbar-tools
-							div.nav-tools
-								md-datepicker(ng-model="myDate")
+						div(layout="row", layout-wrap).md-toolbar-tools.nav-tools
+							div(flex-sm="80", flex-order-sm="1").nav-tools
+								md-datepicker(ng-model="myDate", class="nav-datepicker")
 								md-menu(md-offset="20em 35em")
 									md-button.md-icon-button.gallery-search-btn(ng-click="$mdOpenMenu($index)")
 										i.fa.fa-search
@@ -16,18 +16,23 @@ div(data-ng-controller="galleryController as vm")
 										md-menu-item
 											md-input-container.seeker-inputmenu
 												input(name="search", class="seeker-input md-body-1")
-											md-button.seeker-subbtn
+											md-button.seeker-subbtn.md-primary
 												i.fa.fa-search
-							div.nav-links
-								md-button
+							div(flex-sm="20", flex-order-sm="2", hide show-sm)
+								md-button(menu-trigger="").menu-trig
+									span.button-desh
+									span.button-desh
+									span.button-desh
+							div(flex-sm="100", flex-order-sm="3", hide-sm, layout-sm="column").nav-filter
+								md-button.filter-btn
 									| Today
-								md-button
+								md-button.filter-btn
 									| Yesterday
-								md-button
+								md-button.filter-btn
 									| Last Week
-								md-button
+								md-button.filter-btn
 									| The Month
-							p.filter-txt text explaining filter result
+								p.filter-txt text explaining filter result
 					div.gallery-carousel()
 						div(slick-dir="", data-callback="vm.extendGallery()")
 							ul(rn-carousel, class="ang-carousel").rn-carousel-custom
@@ -59,14 +64,14 @@ div(data-ng-controller="galleryController as vm")
 								p.abBlock-p
 									|Fusce vehicula velit massa, ut convallis massa lacinia eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque consequat vitae erat eget vehicula. Ut interdum odio ac erat porttitor, dapibus tempus risus mattis. Ut elementum quis tellus quis maximus.
 						div(layout="column", flex='33')
-							.inf-block(flex)
+							.inf-block(flex="50")
 								.inf-margin
 									h4.abBlock-h.md-title Info Block
 									p.abBlock-p
 										|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dictum arcu sed nibh pretium, vitae blandit augue dignissim.
 									p.abBlock-p
 										|Nullam sit amet commodo nibh. Proin venenatis lobortis venenatis.
-							.advert(flex)
+							.advert(flex="50")
 				md-card-content
 					.widgets(layout="row")
 						.widget-1(flex="33")

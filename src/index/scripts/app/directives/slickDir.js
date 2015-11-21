@@ -25,19 +25,6 @@
 						gallery.attr('slides-to-scroll', 2);
 					}
 				}
-				// var swipeCounter = 0;
-				// gallery.on('swipe', function(event, slick, direction) {
-				// 	if (direction == 'left') {
-				// 		swipeCounter -= 1;
-				// 	}
-				// 	else if (direction == 'right') {
-				// 		swipeCounter += 1;
-				// 	}
-				// 	if (swipeCounter == 2 || swipeCounter == -2) {
-				// 		swipeCounter = 0;
-				// 		callBackFun();
-				// 	}
-				// });
 				var carEl = document.getElementsByClassName('ang-carousel')[0],
 					startM = 0,
 					moveLth = 0,
@@ -74,15 +61,29 @@
 					carEl.ondragstart = null;
 					carEl.onmousedown = null;
 				};
-
 				function swipeCallBack () {
 					callBackFun();
 				};
-
 				function callBackFun() {
 					console.log('second slide');
 					scope.callback(); // - это колбек для закачки новых данных
-				}
+				};
+				var trigger = document.getElementsByClassName('menu-trig')[0],
+					navFilter = document.getElementsByClassName('nav-filter')[0];
+				trigger.addEventListener('click', function(){
+					if (trigger.classList.contains('trigActive') == false) {
+						trigger.classList.add('trigActive');
+						navFilter.classList.remove('navFiltInactive');
+						navFilter.classList.add('show-sm', 'navFiltActive');
+					}
+					else {
+						trigger.classList.remove('trigActive');
+						navFilter.classList.add('navFiltInactive');
+						setTimeout(function() {
+							navFilter.classList.remove('show-sm', 'navFiltActive');
+						}, 400);
+					}
+				});
 			}
 		}
 	}
