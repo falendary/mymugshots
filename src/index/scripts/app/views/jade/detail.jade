@@ -38,19 +38,20 @@ div(data-ng-controller="detailController as vm")
 						.advert(flex="33")
 						.detail(flex="33")
 							.detail-block
-								h1.md-display-1.img-title Image Title Here
+								h1.md-display-1.img-title
+									|{{vm.entity.last_name}} {{vm.entity.first_name}}
 								p.img-inf
 									|Date 11/13/2015
 								p.img-inf
-									|Info 1: Some text
+									|Booking Number: {{vm.entity.booking_id}}
 								p.img-inf
-									|Info 2: Some text
+									|Booking on: {{vm.entity.booking_datetime | date:'dd.MM.yyyy'}}
 								p.img-inf
-									|Info 3: Some text
-								p.img-inf
-									|Info 4: orem ipsum dolor sit amet, consectetur adipiscing elit. Donec non efficitur urna. Etiam id nisl rhoncus libero bibendum blandit. Donec convallis porttitor elementum. Phasellus massa enim, pulvinar non metus in, feugiat sollicitudin mauris.
-								p.img-inf
-									|Info 4: orem ipsum dolor sit amet, consectetur adipiscing elit. Donec non efficitur urna. Etiam id nisl rhoncus libero bibendum blandit. Donec convallis porttitor elementum. Phasellus massa enim, pulvinar non metus in, feugiat sollicitudin mauris.
+									div(data-ng-repeat="charge in vm.entity.agency_offenses.charges")
+										p.charge-level
+											|{{charge.level}}
+										p.charge-description
+											|{{charge.description}}
 						.two-advert(layout="column", flex="33")
 							div(flex)
 								.upper-advert
