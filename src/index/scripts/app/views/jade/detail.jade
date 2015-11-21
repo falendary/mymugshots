@@ -13,8 +13,6 @@ div(data-ng-controller="detailController as vm")
 					p.img-inf
 						|Booking on: {{vm.entity.booking_datetime | date:'dd.MM.yyyy'}}
 					p.img-inf
-						|Info 3: Some text
-					p.img-inf
 						div(data-ng-repeat="charge in vm.entity.agency_offenses.charges")
 							p.charge-level
 								|{{charge.level}}
