@@ -1,0 +1,37 @@
+div(data-ng-controller="detailController as vm")
+	md-card-content(data-ng-if="vm.entity")
+		div(layout="row")
+			.advert(flex="33")
+			.detail(flex="33")
+				.detail-block
+					h1.md-display-1.img-title
+						|{{vm.entity.last_name}} {{vm.entity.first_name}}
+					p.img-inf
+						|Date 11/13/2015
+					p.img-inf
+						|Booking Number: {{vm.entity.booking_id}}
+					p.img-inf
+						|Booking on: {{vm.entity.booking_datetime | date:'dd.MM.yyyy'}}
+					p.img-inf
+						div(data-ng-repeat="charge in vm.entity.agency_offenses.charges")
+							p.charge-level
+								|{{charge.level}}
+							p.charge-description
+								|{{charge.description}}
+			.two-advert(layout="column", flex="33")
+				div(flex)
+					.upper-advert
+				div(flex)
+					.bottom-advert
+	div.loader-holder(data-ng-hide="vm.entity")
+		.loader
+			i.fa.fa-spinner.fa-spin
+	md-card-content
+		h3.recent-h.md-title Recently viewed
+		div(layout="row")
+			.recent-v-wrap(data-ng-repeat="recent in vm.recentlyItems track by $index")
+				md-card
+					img(src="" data-ng-src="recent.image_url", alt="Lorem impsum")
+					md-card-content
+						.gallery-item-title(data-ng-bind="::recent.first_name", data-ui-sref="app.item({ id: recent.booking_id })")
+						.gallery-item-date(data-ng-bind="::recent.booking_datetime")
