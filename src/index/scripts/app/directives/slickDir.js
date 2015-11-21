@@ -41,7 +41,7 @@
 				var carEl = document.getElementsByClassName('ang-carousel')[0],
 					startM = 0,
 					moveLth = 0,
-					slideBase = 3,
+					slideBase = 2,
 					swipeCounter = 0;
 				carEl.addEventListener('mousedown', function(e) {
 					startM = e.clientX;
@@ -66,7 +66,7 @@
 					};
 					if (swipeCounter == slideBase) {
 						swipeCallBack();
-						slideBase += 3;
+						slideBase += 2;
 					};
 					console.log(swipeCounter);
 					carEl.onmousemove = null;
