@@ -9,11 +9,11 @@ div(data-ng-controller="interfaceController as vm")
                         div(layout="row", layout-wrap).md-toolbar-tools.nav-tools
                             div(flex-sm="80", flex-order-sm="1").nav-tools
                                 md-datepicker(data-ng-model="vm.filterDate", data-ng-change="vm.filterByDate()", class="nav-datepicker")
-                                md-menu(md-offset="20em 35em")
+                                md-menu(md-offset="15em 5em")
                                     md-button.md-icon-button.gallery-search-btn(ng-click="$mdOpenMenu($index)")
                                         i.fa.fa-search
                                     md-menu-content(width="6", class="seeker-dropmen")
-                                        md-menu-item
+                                        md-menu-item.seeker-menu-height
                                             md-input-container.seeker-inputmenu
                                                 input(name="search", class="seeker-input md-body-1", data-ng-model="vm.searchQuery")
                                             md-button.seeker-subbtn.md-primary(data-ng-click="vm.searchMate()")
