@@ -7,7 +7,8 @@ div(data-ng-controller="interfaceController as vm")
                         a(href="#" class="catal-logo-a") Site Title / Logo
                     md-toolbar.gallery-toolbar
                         div(layout="row", layout-wrap).md-toolbar-tools.nav-tools
-                            div(flex-sm="80", flex-order-sm="1").nav-tools
+                            div(flex-sm="80", 
+                                flex-order-sm="1").seeker-datepick
                                 md-datepicker(data-ng-model="vm.filterDate", data-ng-change="vm.filterByDate()", class="nav-datepicker")
                                 md-menu(md-offset="15em 5em")
                                     md-button.md-icon-button.gallery-search-btn(ng-click="$mdOpenMenu($index)")
@@ -18,12 +19,17 @@ div(data-ng-controller="interfaceController as vm")
                                                 input(name="search", class="seeker-input md-body-1", data-ng-model="vm.searchQuery")
                                             md-button.seeker-subbtn.md-primary(data-ng-click="vm.searchMate()")
                                                 i.fa.fa-search
-                            div(flex-sm="20", flex-order-sm="2", hide show-sm)
+                            div(flex-sm="20", 
+                                flex-order-sm="2", 
+                                hide show-sm)
                                 md-button.menu-trig
                                     span.button-desh
                                     span.button-desh
                                     span.button-desh
-                            div.nav-filter(flex-sm="100", flex-order-sm="3", hide-sm, layout-sm="column")
+                            div.nav-filter(flex-sm="100", 
+                                            flex-order-sm="3",
+                                            hide-sm, 
+                                            layout-sm="column")
                                 md-button.filter-btn(data-ui-sref="app.gallery({ phrase: 'today'})", ui-sref-opts="{reload: true}")
                                     | Today
                                 md-button.filter-btn(data-ui-sref="app.gallery({ phrase: 'yesterday'})", ui-sref-opts="{reload: true}")

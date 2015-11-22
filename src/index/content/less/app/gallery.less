@@ -30,6 +30,9 @@
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
+.nav-filter {
+  padding-top: 0.3rem;
+}
 .gallery-toolbar {
   margin-left: -16px;
   width: auto;
@@ -66,6 +69,8 @@ md-datepicker.md-default-theme, md-datepicker {
 }
 .md-datepicker-calendar-pane {
   background-color: #ffffff;
+  top: 21% !important;
+  left: 13% !important;
 }
 .seeker-dropmenu {
   height: 9em;
@@ -105,6 +110,9 @@ md-menu-item {
   .catal-logo-a {
     font-size: 2em;
   }
+}
+.nav-filter {
+
 }
 .slide-wrap {
   height: 100%;
@@ -254,24 +262,24 @@ a.md-button.foot-link {
       width: 100%;
     }
   }
-  .gallery-toolbar {
-    .filter-txt {
-      display: block;
-      margin: 0.4rem 0 0.4rem 0rem;
-      text-align: right;
-    }
-  }
-  .md-toolbar-tools {
-    a.filter-btn.md-button {
-      min-height: 1.5em;
-      height: 0.6em;
-      margin-top: 0.4rem;
-      span {
-        position: relative;
-        bottom: 0.5rem;
-      }
-    }
-  }
+  // .gallery-toolbar {
+  //   .filter-txt {
+  //     display: block;
+  //     margin: 0.4rem 0 0.4rem 0rem;
+  //     text-align: right;
+  //   }
+  // }
+  // .md-toolbar-tools {
+  //   a.filter-btn.md-button {
+  //     min-height: 1.5em;
+  //     height: 0.6em;
+  //     margin-top: 0.4rem;
+  //     span {
+  //       position: relative;
+  //       bottom: 0.5rem;
+  //     }
+  //   }
+  // }
 }
 @media screen and (max-width: 959px) {
   .gallery-carousel {
@@ -279,34 +287,40 @@ a.md-button.foot-link {
       width: 45em;
     }
   }
-  .md-toolbar-tools {
-    a.filter-btn.md-button {
-      font-size: 0.7em;
-    }
+  .md-datepicker-calendar-pane {
+    left: 9% !important; 
   }
+  // .md-toolbar-tools {
+  //   a.filter-btn.md-button {
+  //     font-size: 0.7em;
+  //   }
+  // }
 }
 @media screen and (max-width: 767px) {
   .md-toolbar-tools.nav-tools {
     height: auto;
     max-height: 50rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    // padding-top: 0.5rem;
+    // padding-bottom: 0.5rem;
+    padding: 0.5rem 0;
   }
-  .nav-datepicker {
-    display: block;
+  .seeker-datepick {
+    padding-left: 0.2em;
   }
-  .nav-datepicker .md-button.md-icon-button, .md-button.md-icon-button.gallery-search-btn {
-    width: 2rem;
-    margin-top: 0.2rem;
-    margin-bottom: 0.2rem;
-    height: 2em;
-    md-icon, md-menu {
-     vertical-align: baseline;
-    }
-  }
+  // .nav-datepicker {
+  //   display: block;
+  // }
+  // .nav-datepicker .md-button.md-icon-button, .md-button.md-icon-button.gallery-search-btn {
+  //   width: 2rem;
+  //   margin-top: 0.2rem;
+  //   margin-bottom: 0.2rem;
+  //   height: 2em;
+  //   md-icon, md-menu {
+  //    vertical-align: baseline;
+  //   }
+  // }
   a.filter-btn.md-button {
-   min-width: 4rem;
-   margin-left: 0.3rem;
+   min-width: 5.5rem;
   }
   .gallery-carousel {
     .item-car, i {
@@ -315,17 +329,21 @@ a.md-button.foot-link {
   }
 }
 @media screen and (max-width: 599px) {
-  .nav-datepicker {
-    display: inline-block;
-  }
-  .nav-datepicker .md-button.md-icon-button, .md-button.md-icon-button.gallery-search-btn {
-    width: 48px;
-    margin-top: 0;
-    margin-bottom: 0;
-    height: auto;
-    md-icon, md-menu {
-      vertical-align: middle;
-    }
+  // .nav-datepicker {
+  //   display: inline-block;
+  // }
+  // .nav-datepicker .md-button.md-icon-button, .md-button.md-icon-button.gallery-search-btn {
+  //   width: 48px;
+  //   margin-top: 0;
+  //   margin-bottom: 0;
+  //   height: auto;
+  //   md-icon, md-menu {
+  //     vertical-align: middle;
+  //   }
+  // }
+  .md-datepicker-calendar-pane {
+    top: 17% !important;
+    left: 6% !important;
   }
   .layout-row > .flex-sm-100.nav-filter {
     max-height: 0;
