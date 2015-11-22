@@ -9,7 +9,9 @@ div(data-ng-controller="interfaceController as vm")
 						div(layout="row", layout-wrap).md-toolbar-tools.nav-tools
 							div(flex-sm="80", 
 								flex-order-sm="1").seeker-datepick
-								md-datepicker(data-ng-model="vm.filterDate", data-ng-change="vm.filterByDate()", class="nav-datepicker")
+								md-datepicker(data-ng-model="vm.filterDate",
+								data-ng-change="vm.filterByDate()", 
+								class="nav-datepicker")
 								md-menu(md-offset="15em 5em")
 									md-button.md-icon-button.gallery-search-btn(ng-click="$mdOpenMenu($index)")
 										i.fa.fa-search
@@ -22,7 +24,7 @@ div(data-ng-controller="interfaceController as vm")
 							div(flex-sm="20", 
 								flex-order-sm="2", 
 								hide show-sm)
-								md-button.menu-trig
+								md-button(drop-menu="").menu-trig
 									span.button-desh
 									span.button-desh
 									span.button-desh

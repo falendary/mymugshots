@@ -1,8 +1,11 @@
 div(data-ng-controller="detailController as vm")
 	md-card-content(data-ng-if="vm.entity")
-		div(layout="row")
-			.advert(flex="33")
-			.detail(flex="33")
+		div(layout="row", 
+			layout-align-md="center start",
+			layout-align-sm="center start",
+			layout-wrap)
+			.big-detail-advert(flex-gt-md="33", flex-md="40", flex-sm="40")
+			.detail(flex-gt-md="33", flex-md="100", flex-sm="100")
 				.detail-block
 					h1.md-display-1.img-title
 						|{{vm.entity.last_name}} {{vm.entity.first_name}}
@@ -19,9 +22,9 @@ div(data-ng-controller="detailController as vm")
 							p.charge-description
 								|{{charge.description}}
 			.two-advert(layout="column", flex="33")
-				div(flex)
+				div(flex, class="hide-md hide-sm")
 					.upper-advert
-				div(flex)
+				div(flex, class="hide-md hide-sm")
 					.bottom-advert
 	div.loader-holder(data-ng-hide="vm.entity")
 		.loader
@@ -29,7 +32,7 @@ div(data-ng-controller="detailController as vm")
 	md-card-content
 		h3.recent-h.md-title Recently viewed
 		div(layout="row", layout-wrap)
-			.recent-v-wrap(data-ng-repeat="recent in vm.recentlyItems track by $index", flex-gt-md="15", flex-md="25", flex-sm="50")
+			.recent-v-wrap(data-ng-repeat="recent in vm.recentlyItems track by $index", flex-gt-md="15", flex-md="25", flex-sm="33")
 				md-card
 					img(src="" data-ng-src="recent.image_url", alt="Lorem impsum")
 					md-card-content
