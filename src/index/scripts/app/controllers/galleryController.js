@@ -25,7 +25,7 @@
             while (data.length) {
                 vm.slides[index] = {};
                 vm.slides[index].index = index;
-                if (document.body.clientWidth > 1024) {
+                if (document.body.clientWidth >= 1200) {
                     console.log('desktop');
                     console.log('vm.slides[index - 1]', vm.slides[index - 1]);
                     console.log('vm.slides', vm.slides);
@@ -37,7 +37,7 @@
                     }
                     console.log(vm.slides[index].items);
                 } else {
-                    if (document.body.clientWidth > 800) {
+                    if (document.body.clientWidth >= 600) {
                         console.log('pad');
                         vm.slides[index].items = data.splice(0, 6);
                     } else {

@@ -28,8 +28,8 @@ div(data-ng-controller="detailController as vm")
 			i.fa.fa-spinner.fa-spin
 	md-card-content
 		h3.recent-h.md-title Recently viewed
-		div(layout="row")
-			.recent-v-wrap(data-ng-repeat="recent in vm.recentlyItems track by $index")
+		div(layout="row", layout-wrap)
+			.recent-v-wrap(data-ng-repeat="recent in vm.recentlyItems track by $index", flex-gt-md="15", flex-md="25", flex-sm="50")
 				md-card
 					img(src="" data-ng-src="recent.image_url", alt="Lorem impsum")
 					md-card-content

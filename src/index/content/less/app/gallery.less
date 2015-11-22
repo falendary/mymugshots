@@ -98,8 +98,7 @@ md-menu-item {
     background-color: rgb(63,81,181);
     padding: 0;
     text-align: center;
-    font-size: 1rem;
-    // border-color: rgba(0,0,0,0.12);
+    font-size: 1rem;;
     color: #ffffff;
     &:hover:not([disabled]), :hover {
       background-color: rgba(63,81,181, 0.9);
@@ -118,7 +117,8 @@ md-menu-item {
   height: 100%;
 }
 .rn-carousel-custom {
-  height: 610px;
+  height: 38rem;
+  margin-bottom: 1rem;
   li.item-car {
     width: 90%;
   }
@@ -163,25 +163,20 @@ md-menu-item {
   }
 }
 .ltAd {
-  width: 49%;
-  height: 15em;
-  margin-right: 1%;
-  background-color: #eeeeee;
+  height: 7rem;
+  div {
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+  }
 }
 .rtAd {
-  width: 49%;
-  height: 15em;
-  margin-left: 1%;
-  background-color: #eeeeee;
-}
-.about-block {
-  margin-right: 2em;
-}
-.inf-block {
-  height: 10em;
-}
-.inf-margin {
-  height: 15em;
+  height: 7rem;
+  div {
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+  }
 }
 .advert {
   background-color: #e5e5e5;
@@ -194,15 +189,19 @@ md-menu-item {
   font-size: 2em;
   // font-family: RobotoBlack;
 }
+.layout-margin {
+  .info-advert {
+    height: 15em;
+    .advert();
+    margin: 0;
+  }
+}
 .widget-block {
   .advert();
-  height: 12em;
+  height: 7.3rem;
 }
 .widget-h {
   font-family: RobotoBold;
-}
-.gallery-foot {
-  height: 5em;
 }
 .sitename-link {
   color: #000000;
@@ -210,13 +209,12 @@ md-menu-item {
 }
 .rights {
   margin-bottom: 0;
-  font-size: 1.5em;
+  font-size: 0.7rem;
 }
 .foot-list {
   padding: 0;
 }
 a.md-button.foot-link {
-  // display: inline-block;
   background-color: transparent;
   color: #000000;
   text-decoration: none;
@@ -246,7 +244,7 @@ a.md-button.foot-link {
 }
 // Detail page
 .recent-v-wrap {
-  width: 16.6%;
+  // width: 16.6%;
 }
 .recent-h {
   margin-left: 0.4rem;
@@ -257,29 +255,14 @@ a.md-button.foot-link {
       width: 43em;
     }
   }
+  .gallery-item {
+    width: 33.2%;
+  }
   .gallery-item-photo {
     img {
       width: 100%;
     }
   }
-  // .gallery-toolbar {
-  //   .filter-txt {
-  //     display: block;
-  //     margin: 0.4rem 0 0.4rem 0rem;
-  //     text-align: right;
-  //   }
-  // }
-  // .md-toolbar-tools {
-  //   a.filter-btn.md-button {
-  //     min-height: 1.5em;
-  //     height: 0.6em;
-  //     margin-top: 0.4rem;
-  //     span {
-  //       position: relative;
-  //       bottom: 0.5rem;
-  //     }
-  //   }
-  // }
 }
 @media screen and (max-width: 959px) {
   .gallery-carousel {
@@ -290,35 +273,19 @@ a.md-button.foot-link {
   .md-datepicker-calendar-pane {
     left: 9% !important; 
   }
-  // .md-toolbar-tools {
-  //   a.filter-btn.md-button {
-  //     font-size: 0.7em;
-  //   }
-  // }
+  .adBlock-h {
+    margin-top: 0;
+  }
 }
 @media screen and (max-width: 767px) {
   .md-toolbar-tools.nav-tools {
     height: auto;
     max-height: 50rem;
-    // padding-top: 0.5rem;
-    // padding-bottom: 0.5rem;
     padding: 0.5rem 0;
   }
   .seeker-datepick {
     padding-left: 0.2em;
   }
-  // .nav-datepicker {
-  //   display: block;
-  // }
-  // .nav-datepicker .md-button.md-icon-button, .md-button.md-icon-button.gallery-search-btn {
-  //   width: 2rem;
-  //   margin-top: 0.2rem;
-  //   margin-bottom: 0.2rem;
-  //   height: 2em;
-  //   md-icon, md-menu {
-  //    vertical-align: baseline;
-  //   }
-  // }
   a.filter-btn.md-button {
    min-width: 5.5rem;
   }
@@ -329,18 +296,9 @@ a.md-button.foot-link {
   }
 }
 @media screen and (max-width: 599px) {
-  // .nav-datepicker {
-  //   display: inline-block;
-  // }
-  // .nav-datepicker .md-button.md-icon-button, .md-button.md-icon-button.gallery-search-btn {
-  //   width: 48px;
-  //   margin-top: 0;
-  //   margin-bottom: 0;
-  //   height: auto;
-  //   md-icon, md-menu {
-  //     vertical-align: middle;
-  //   }
-  // }
+ .gallery-item {
+    width: 50%;
+  }
   .md-datepicker-calendar-pane {
     top: 17% !important;
     left: 6% !important;
@@ -357,11 +315,12 @@ a.md-button.foot-link {
     a.filter-btn.md-button {
       font-size: 0.8em;
       min-width: 88px;
-      margin: 0.6rem 0;
+      margin: 0.6rem 0.3rem;
       min-height: 36px;
       height: auto;
       padding-top: 0.3rem;
       padding-bottom: 0.3rem;
+      padding-left: 1rem;
       text-align: left;
       span {
         position: static;
@@ -375,5 +334,8 @@ a.md-button.foot-link {
     border-top: 0.1rem solid #ffffff;
     text-align: left; 
    }
+  }
+  a.md-button.foot-link:first-child {
+    padding-left: 0;
   }
 }
