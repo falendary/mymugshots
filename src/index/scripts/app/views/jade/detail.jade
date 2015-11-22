@@ -35,6 +35,6 @@ div(data-ng-controller="detailController as vm")
 			.recent-v-wrap(data-ng-repeat="recent in vm.recentlyItems track by $index", flex-gt-md="15", flex-md="25", flex-sm="33")
 				md-card
 					img(src="" data-ng-src="recent.image_url", alt="Lorem impsum")
-					md-card-content
+					md-card-content.recent-inf
 						.gallery-item-title(data-ng-bind="::recent.first_name", data-ui-sref="app.item({ id: recent.booking_id })")
 						.gallery-item-date(data-ng-bind="::recent.booking_datetime")
