@@ -39,7 +39,10 @@
                 }
                 setCookie('recentlyItems', JSON.stringify(vm.recentlyItems), 30);
             } else {
-                setCookie('recentlyItems', JSON.stringify([vm.entity]), 30);
+                setCookie('recentlyItems', JSON.stringify([{booking_datetime: vm.entity.booking_datetime,
+                    booking_id: vm.entity.booking_id,
+                    image_url: vm.entity.image_url
+                }]), 30);
             }
 
         });

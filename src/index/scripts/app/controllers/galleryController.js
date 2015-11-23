@@ -16,26 +16,34 @@
 
         var vm = this;
 
-        vm.currentPage = 1;
+        if ($stateParams.pageNumber) {
+            if ($stateParams.pageNumber === 0) {
+                vm.currentPage = 1;
+            } else {
+                vm.currentPage = $stateParams.pageNumber;
+            }
+        } else {
+            vm.currentPage = 1;
+        }
         vm.nextPage = vm.currentPage + 2;
         vm.slidesLoaded = false;
         vm.newSlides = [];
 
-        var addItems = function(data, index) {
+        var addItems = function (data, index) {
             while (data.length) {
                 vm.slides[index] = {};
                 vm.slides[index].index = index;
                 if (document.body.clientWidth >= 1200) {
-                    console.log('desktop');
-                    console.log('vm.slides[index - 1]', vm.slides[index - 1]);
-                    console.log('vm.slides', vm.slides);
-                    if(vm.slides[index - 1] && vm.slides[index - 1].items.length < 8) {
+                    //console.log('desktop');
+                    //console.log('vm.slides[index - 1]', vm.slides[index - 1]);
+                    //console.log('vm.slides', vm.slides);
+                    if (vm.slides[index - 1] && vm.slides[index - 1].items.length < 8) {
                         var itemsToFill = 8 - vm.slides[index - 1].items.length;
                         vm.slides[index - 1].items.concat(data.splice(0, itemsToFill));
                     } else {
                         vm.slides[index].items = data.splice(0, 8);
                     }
-                    console.log(vm.slides[index].items);
+                    //console.log(vm.slides[index].items);
                 } else {
                     if (document.body.clientWidth >= 600) {
                         console.log('pad');
@@ -49,31 +57,31 @@
             }
         };
 
-        if($stateParams.phrase) {
+        if ($stateParams.phrase) {
             var index = 0;
-            if($stateParams.phrase === 'today') {
-                entityService.getEntitiesByPhrase('today').then(function(data){
+            if ($stateParams.phrase === 'today') {
+                entityService.getEntitiesByPhrase('today').then(function (data) {
                     vm.slides = [];
                     addItems(data, index);
                     $scope.$apply();
                 });
             } else {
-                if($stateParams.phrase === 'yesterday') {
-                    entityService.getEntitiesByPhrase('yesterday').then(function(data) {
+                if ($stateParams.phrase === 'yesterday') {
+                    entityService.getEntitiesByPhrase('yesterday').then(function (data) {
                         vm.slides = [];
                         addItems(data, index);
                         $scope.$apply();
                     });
                 } else {
-                    if($stateParams.phrase === 'lastweek') {
-                        entityService.getEntitiesByPhrase('lastweek').then(function(data) {
+                    if ($stateParams.phrase === 'lastweek') {
+                        entityService.getEntitiesByPhrase('lastweek').then(function (data) {
                             vm.slides = [];
                             addItems(data, index);
                             $scope.$apply();
                         });
                     } else {
-                        if($stateParams.phrase === 'month') {
-                            entityService.getEntitiesByPhrase('month').then(function(data) {
+                        if ($stateParams.phrase === 'month') {
+                            entityService.getEntitiesByPhrase('month').then(function (data) {
                                 vm.slides = [];
                                 addItems(data, index);
                                 $scope.$apply();
@@ -84,7 +92,7 @@
             }
         } else {
             if ($stateParams.query) {
-                entityService.getEntitiesByQuery($stateParams.query).then(function(data){
+                entityService.getEntitiesByQuery($stateParams.query).then(function (data) {
                     var index = 0;
                     vm.slides = [];
                     addItems(data, index);
@@ -96,7 +104,7 @@
                     var tempTo = new Date(to).getTime();
                     var tempFrom = 90 * 24 * 60 * 60 * 1000;
                     var from = new Date(tempTo - tempFrom);
-                    entityService.getEntitiesByDatetime(from.toISOString(), to.toISOString()).then(function(data){
+                    entityService.getEntitiesByDatetime(from.toISOString(), to.toISOString()).then(function (data) {
                         var index = 0;
                         vm.slides = [];
                         addItems(data, index);
@@ -133,13 +141,13 @@
 
                 vm.newSlides = data;
                 var index = vm.slides.length - 1;
-                console.log('vm.slides.length', vm.slides.length);
+                //console.log('vm.slides.length', vm.slides.length);
                 addItems(data, index);
 
                 vm.currentPage = vm.currentPage + 2;
                 vm.nextPage = vm.currentPage + 2;
 
-                console.log(vm.slides);
+                //console.log(vm.slides);
                 $scope.$apply();
             });
         };

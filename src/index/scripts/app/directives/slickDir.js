@@ -1,7 +1,7 @@
 (function () {
 	'use strict';
 
-	module.exports = function () {
+	module.exports = function ($state) {
 		return {
 			restrict: 'A',
 			scope: {
@@ -20,22 +20,29 @@
 					carEl.ondragstart = function() { return false };
 					carEl.onmousemove = mouseMoveCar;
 				});
+
+
+
 				carEl.addEventListener('mouseup', mouseUpCar);
 				
 				function mouseMoveCar (e) {
 					moveLth = startM - e.clientX;
 				};
 				function mouseUpCar () {
+					var index = parseInt(window.location.hash.split('#/home/')[1]) || 1;
 					if (moveLth > 104) {
 						swipeCounter = swipeCounter + 1;
+						index = index + 1;
+						$state.go('app.gallery', {pageNumber: index}, {notify: false});
 						console.log('move right');
 					}
 					else if (swipeCounter != 0 && moveLth < -104) {
 						swipeCounter = swipeCounter - 1;
+						index = index - 1;
+						$state.go('app.gallery', {pageNumber: index}, {notify: false});
 						console.log('move leftt');
 					};
 					if (swipeCounter == slideBase) {
-						swipeCallBack();
 						slideBase += 2;
 					};
 					console.log(swipeCounter);

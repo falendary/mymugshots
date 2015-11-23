@@ -37,7 +37,7 @@
     app.controller('detailController', ['$scope', '$stateParams', require('./app/controllers/detailController')]);
     app.controller('interfaceController', ['$scope', '$state', require('./app/controllers/interfaceController')]);
 
-    app.directive('slickDir', [require('./app/directives/slickDir')]);
+    app.directive('slickDir', ['$state', require('./app/directives/slickDir')]);
     app.directive('dropMenu', [require('./app/directives/dropMenu')]);
 
     require('./app/templates.min.js');
