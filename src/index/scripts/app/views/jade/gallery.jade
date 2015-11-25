@@ -15,20 +15,3 @@ div(data-ng-controller="galleryController as vm")
 		div.loader-holder(data-ng-hide="vm.slides")
 			.loader
 				i.fa.fa-spinner.fa-spin
-//- div(data-ng-controller="galleryController as vm")
-//-         div.gallery-carousel(data-ng-show="vm.slides")
-//-             div(slick-dir="", data-callback="vm.extendGallery()", data-ng-show="vm.slides.length")
-//-                 ul(rn-carousel, class="ang-carousel").rn-carousel-custom
-//-                     li.item-car(data-ng-repeat="slide in vm.slides track by slide.index")
-//-                         .gallery-item(data-ng-repeat="item in slide.items")
-//-                             md-card.gallery-item-photo
-//-                                 img(data-ng-src="{{item.image_url}}", alt="{{item.first_name}}")
-//-                                 md-card-content
-//-                                     .gallery-item-title(data-ng-bind="::item.first_name", data-ui-sref="app.item({ id: item.booking_id })")
-//-                                     .gallery-item-date(data-ng-bind="::item.booking_datetime | date:'dd.mm.yyyy'")
-//-             div(data-ng-hide="vm.slides.length")
-//-                 h1
-//-                     | No results found
-//-         div.loader-holder(data-ng-hide="vm.slides")
-//-             .loader
-//-                 i.fa.fa-spinner.fa-spin

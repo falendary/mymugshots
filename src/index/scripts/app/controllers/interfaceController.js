@@ -6,7 +6,7 @@
 
     'use strict';
 
-    module.exports = function($scope, $state) {
+    module.exports = function($scope, $state, $location) {
 
         var vm = this;
 
@@ -20,9 +20,17 @@
         vm.filterByDate = function() {
             console.log('filterByDate', vm.filterDate);
             $state.go('app.gallery', {datetime: vm.filterDate}, {reload: true});
-        }
-
+        };
+        vm.itemGoBack = function () {
+            $state.go('app.gallery', {reload: true});
+        };
+        vm.url;
+        window.onhashchange = function () {
+            vm.url = $location.path().search('/item/');
+            $scope.$apply();
+        };
+        window.onload = function () {
+            vm.url = $location.path().search('/item/');
+        };
     }
-
-
 }());

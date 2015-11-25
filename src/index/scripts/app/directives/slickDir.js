@@ -1,30 +1,13 @@
 (function () {
 	'use strict';
 
-	module.exports = function () {
+	module.exports = function ($state) {
 		return {
-			restrict: 'AE',
+			restrict: 'A',
 			scope: {
 				callback: '&'
 			},
 			link: function (scope, elem, attrs) {
-				var windowWth = window.innerWidth;
-				var	gallery = $('.gallery-slick');
-
-				if (windowWth >= 1200) {
-					gallery.attr('slides-to-show', 4);
-					gallery.attr('slides-to-scroll', 4);
-				}
-				else if (windowWth < 1200) {
-					if (windowWth < 768) {
-						gallery.attr('slides-to-show', 2);
-						gallery.attr('slides-to-scroll', 2);
-					}
-					else {
-						gallery.attr('slides-to-show', 2);
-						gallery.attr('slides-to-scroll', 2);
-					}
-				}
 				var carEl = document.getElementsByClassName('ang-carousel')[0],
 					startM = 0,
 					moveLth = 0,
@@ -43,16 +26,21 @@
 					moveLth = startM - e.clientX;
 				};
 				function mouseUpCar () {
+					var index = parseInt(window.location.hash.split('#/home/')[1]) || 1;
+					// right
 					if (moveLth > 104) {
 						swipeCounter = swipeCounter + 1;
-						console.log('move right');
+						index = index + 1;
+						$state.go('app.gallery', {pageNumber: index}, {notify: false});
 					}
+					// left
 					else if (swipeCounter != 0 && moveLth < -104) {
 						swipeCounter = swipeCounter - 1;
-						console.log('move leftt');
+						index = index - 1;
+						$state.go('app.gallery', {pageNumber: index}, {notify: false});
 					};
 					if (swipeCounter == slideBase) {
-						swipeCallBack();
+						callBackFun();
 						slideBase += 2;
 					};
 					console.log(swipeCounter);
@@ -68,22 +56,6 @@
 					console.log('second slide');
 					scope.callback(); // - это колбек для закачки новых данных
 				};
-				var trigger = document.getElementsByClassName('menu-trig')[0],
-					navFilter = document.getElementsByClassName('nav-filter')[0];
-				trigger.addEventListener('click', function(){
-					if (trigger.classList.contains('trigActive') == false) {
-						trigger.classList.add('trigActive');
-						navFilter.classList.remove('navFiltInactive');
-						navFilter.classList.add('show-sm', 'navFiltActive');
-					}
-					else {
-						trigger.classList.remove('trigActive');
-						navFilter.classList.add('navFiltInactive');
-						setTimeout(function() {
-							navFilter.classList.remove('show-sm', 'navFiltActive');
-						}, 400);
-					}
-				});
 			}
 		}
 	}

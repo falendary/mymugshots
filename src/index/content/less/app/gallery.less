@@ -30,6 +30,9 @@
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
+.nav-filter {
+  padding-top: 0.3rem;
+}
 .gallery-toolbar {
   margin-left: -16px;
   width: auto;
@@ -43,18 +46,16 @@
   }
 }
 .menu-trig {
-  min-width: 4rem;
+  min-width: 1.6rem;
   height: 2.8rem;
-  padding: 0.6rem;
-  border: 0.2rem solid #ffffff;
-  border-radius: 0.6rem;
+  padding: 0.3rem;
 }
 .button-desh {
   width: 100%;
   height: 0.2rem;
   background-color: #ffffff;
   display: block;
-  &:not(:last-child) {
+  &:not(:nth-child(3)) {
     margin-bottom: 0.3rem;
   }
 }
@@ -64,18 +65,27 @@ md-datepicker.md-default-theme, md-datepicker {
 .md-datepicker-input-container {
   display: none;
 }
+.md-default-theme .md-datepicker-open .md-datepicker-calendar-icon {
+  fill: #ffffff;
+}
 .md-datepicker-calendar-pane {
   background-color: #ffffff;
+  top: 4.5rem !important;
+  left: 13% !important;
 }
 .seeker-dropmenu {
   height: 9em;
+}
+.seeker-menu-height {
+  min-height: 41px;
+  height: 41px; 
 }
 .seeker-inputmenu {
   padding: 0 1.5em;
   width: 75%;
   input.seeker-input {
     border-width: 0.2em;
-    height: 2.6em;
+    height: 2.1em;
     font-size: 0.9rem;
     padding-left: 1em;
     border-color: rgba(0,0,0,0.3);
@@ -85,12 +95,11 @@ md-menu-item {
   > button.md-button.seeker-subbtn.md-primary {
     min-width: 0;
     width: 3.5em;
-    height: 2.6em;
+    height: 2.1em;
     background-color: rgb(63,81,181);
     padding: 0;
     text-align: center;
-    font-size: 1rem;
-    // border-color: rgba(0,0,0,0.12);
+    font-size: 1rem;;
     color: #ffffff;
     &:hover:not([disabled]), :hover {
       background-color: rgba(63,81,181, 0.9);
@@ -106,7 +115,8 @@ md-menu-item {
   height: 100%;
 }
 .rn-carousel-custom {
-  height: 610px;
+  height: 38.5rem;
+  margin-bottom: 1rem;
   li.item-car {
     width: 90%;
   }
@@ -129,10 +139,10 @@ md-menu-item {
     text-align: center;
     margin-top: 1em;
     margin-bottom: .5em;
-    font-size: 1.5em;
+    font-size: 1.8em;
   }
   &-date {
-    font-size: 1.5em;
+    font-size: 2em;
     text-align: center;
   }
 }
@@ -151,60 +161,62 @@ md-menu-item {
   }
 }
 .ltAd {
-  width: 49%;
-  height: 15em;
-  margin-right: 1%;
-  background-color: #eeeeee;
+  height: 7rem;
+  div {
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+  }
 }
 .rtAd {
-  width: 49%;
-  height: 15em;
-  margin-left: 1%;
-  background-color: #eeeeee;
-}
-.about-block {
-  margin-right: 2em;
-}
-.inf-block {
-  height: 10em;
-}
-.inf-margin {
-  height: 15em;
+  height: 7rem;
+  div {
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+  }
 }
 .advert {
   background-color: #e5e5e5;
 }
 .abBlock-h {
-  // font-size: 2.5em;
+  font-size: 3em;
   font-family: RobotoBold;
 }
 .abBlock-p {
   font-size: 2em;
-  // font-family: RobotoBlack;
+  line-height: 1.2;
+}
+.layout-margin {
+  .info-advert {
+    height: 15em;
+    .advert();
+    margin: 0;
+  }
 }
 .widget-block {
   .advert();
-  height: 12em;
+  height: 7.3rem;
 }
 .widget-h {
   font-family: RobotoBold;
-}
-.gallery-foot {
-  height: 5em;
+  font-size: 3em;
 }
 .sitename-link {
   color: #000000;
   text-decoration: none;
 }
-.rights {
+.rights, .copyright-holder {
   margin-bottom: 0;
   font-size: 1.5em;
+}
+.copyright-holder {
+  margin-bottom: 1rem;
 }
 .foot-list {
   padding: 0;
 }
 a.md-button.foot-link {
-  // display: inline-block;
   background-color: transparent;
   color: #000000;
   text-decoration: none;
@@ -212,6 +224,7 @@ a.md-button.foot-link {
   padding: 0 10px;
   min-width: 0;
   text-transform: none;
+  font-size: 2.1em;
   &:hover {
     background-color: transparent;
   }
@@ -233,95 +246,206 @@ a.md-button.foot-link {
   font-size: 2em;
 }
 // Detail page
-.recent-v-wrap {
-  width: 16.6%;
-}
 .recent-h {
   margin-left: 0.4rem;
+  font-size: 3em;
+}
+.big-detail-advert {
+  .advert();
+}
+.img-title {
+   font-size: 5em;
 }
 @media screen and (max-width: 1199px) {
+  .rn-carousel-custom {
+    height: 38.4rem;
+    .gallery-item-title {
+      font-size: 2.2em;
+    }
+    .gallery-item-date {
+      font-size: 2.2em;
+    }
+  }
   .gallery-carousel {
     .item-car {
       width: 43em;
     }
+  }
+  .gallery-item {
+    width: 33.2%;
   }
   .gallery-item-photo {
     img {
       width: 100%;
     }
   }
-  .gallery-toolbar {
-    .filter-txt {
-      display: block;
-      margin: 0.4rem 0 0.4rem 0rem;
-      text-align: right;
-    }
+  .recent-inf {
+    font-size: 1em;
+    padding-left: 0;
+    padding-right: 0;
   }
-  .md-toolbar-tools {
-    a.filter-btn.md-button {
-      min-height: 1.5em;
-      height: 0.6em;
-      margin-top: 0.4rem;
-      span {
-        position: relative;
-        bottom: 0.5rem;
-      }
-    }
+  .img-inf {
+    font-size: 2.4em;
+  }
+  .recent-h {
+    font-size: 3.7em;
+  }
+  .abBlock-h, .widget-h {
+    font-size: 3.5em;
+  }
+  .abBlock-p {
+    font-size: 2.6em;
+  }
+  .rights, .copyright-holder {
+    font-size: 2.1em;
+  }
+  a.md-button.foot-link, .landing-links-menu .md-button, .landing-menu .md-button {
+    font-size: 2.4em;
+  }
+  .catal-logo-row .catal-logo-a {
+    font-size: 2.7em;
+  }
+  .shell-logo {
+    font-size: 11.5em;
   }
 }
 @media screen and (max-width: 959px) {
+  .md-toolbar-tools.nav-tools {
+    height: auto;
+    max-height: 50rem;
+    padding: 0.5rem 0;
+  }
+  .rn-carousel-custom {
+    height: 37.9rem;
+    .gallery-item-title {
+      font-size: 2.6em;
+    }
+    .gallery-item-date {
+      font-size: 2.6em;
+    }
+  }
   .gallery-carousel {
     .item-car {
       width: 45em;
     }
   }
-  .md-toolbar-tools {
-    a.filter-btn.md-button {
-      font-size: 0.7em;
-    }
+  .md-datepicker-calendar-pane {
+    left: 9% !important; 
+  }
+  .layout-margin .info-advert {
+    height: 20;
+  }
+  .adBlock-h {
+    margin-top: 0;
+  }
+  .big-detail-advert {
+    height: 65em;
+  }
+  .recent-inf {
+    font-size: 1.9em;
+  }
+  .recent-h {
+    font-siez: 5em;
+  }
+  .abBlock-h, .widget-h {
+    font-size: 4.5em;
+  }
+  .abBlock-p {
+    font-size: 2.9em;
+  }
+  .rights, .copyright-holder {
+    font-size: 2.3em;
+  }
+   a.md-button.foot-link, .landing-links-menu .md-button {
+    font-size: 3em;
+  }
+  .landing-menu .md-button {
+    font-size: 3.3em;
+  }
+  .catal-logo-row .catal-logo-a {
+    font-size: 3.2em;
+  }
+  .img-inf {
+    font-size: 2.9em;
+  }
+  .shell-logo {
+    font-size: 14em;
+  }
+  .land-bot {
+    height: 40em;
   }
 }
 @media screen and (max-width: 767px) {
-  .md-toolbar-tools.nav-tools {
-    height: auto;
-    max-height: 50rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
-  .nav-datepicker {
-    display: block;
-  }
-  .nav-datepicker .md-button.md-icon-button, .md-button.md-icon-button.gallery-search-btn {
-    width: 2rem;
-    margin-top: 0.2rem;
-    margin-bottom: 0.2rem;
-    height: 2em;
-    md-icon, md-menu {
-     vertical-align: baseline;
+  .rn-carousel-custom {
+    height: 36.7rem;
+    .gallery-item-title {
+      font-size: 2.8em;
+    }
+    .gallery-item-date {
+      font-size: 2.8em;
     }
   }
+  .seeker-datepick {
+    padding-left: 0.2em;
+  }
   a.filter-btn.md-button {
-   min-width: 4rem;
-   margin-left: 0.3rem;
+   min-width: 5.5rem;
   }
   .gallery-carousel {
     .item-car, i {
       width: 67em;
     }
   }
+  .abBlock-h {
+    margin-top: 0;
+  }
+  .img-title {
+   font-size: 6em;
+  }
+  .img-inf {
+    font-size: 3.6em;
+  }
+  .abBlock-h, .widget-h {
+    font-size: 5.5em;
+  }
+  .abBlock-p {
+    font-size: 3.7em;
+  }
+  .rights, .copyright-holder {
+    font-size: 3.6em;
+  }
+   a.md-button.foot-link, .landing-links-menu .md-button {
+    font-size: 3.4em;
+  }
+  .landing-menu .md-button {
+    font-size: 3.7em;
+  }
+  .catal-logo-row .catal-logo-a {
+    font-size: 3.9em;
+  }
+  .recent-h {
+    font-size: 6.3em;
+  }
+  .shell-logo {
+    font-size: 14em;
+  }
 }
 @media screen and (max-width: 599px) {
-  .nav-datepicker {
-    display: inline-block;
-  }
-  .nav-datepicker .md-button.md-icon-button, .md-button.md-icon-button.gallery-search-btn {
-    width: 48px;
-    margin-top: 0;
-    margin-bottom: 0;
-    height: auto;
-    md-icon, md-menu {
-      vertical-align: middle;
+  .rn-carousel-custom {
+    height: 36.4rem;
+    .gallery-item-title {
+      font-size: 3.8em;
     }
+    .gallery-item-date {
+      font-size: 3.8em;
+    }
+  }
+ .gallery-item {
+    width: 50%;
+  }
+  .md-datepicker-calendar-pane {
+    top: 3.5rem !important;
+    left: 6% !important;
   }
   .layout-row > .flex-sm-100.nav-filter {
     max-height: 0;
@@ -335,11 +459,11 @@ a.md-button.foot-link {
     a.filter-btn.md-button {
       font-size: 0.8em;
       min-width: 88px;
-      margin: 0.6rem 0;
+      margin: 0.6rem 0.3rem;
       min-height: 36px;
-      height: auto;
       padding-top: 0.3rem;
       padding-bottom: 0.3rem;
+      padding-left: 1rem;
       text-align: left;
       span {
         position: static;
@@ -353,5 +477,52 @@ a.md-button.foot-link {
     border-top: 0.1rem solid #ffffff;
     text-align: left; 
    }
+  }
+  a.md-button.foot-link:first-child {
+    padding-left: 0;
+  }
+   .landing-menu .md-button {
+    font-size: 4.6em;
+  }
+  .layout-margin {
+    .info-advert {
+      margin-bottom: 1rem;
+    }
+  }
+  .big-detail-advert {
+    height: 80em;
+  }
+  .recent-inf {
+    font-size: 2.2em;
+  }
+  .abBlock-h, .widget-h {
+    font-size: 7em;
+  }
+  .abBlock-p {
+    font-size: 4.7em;
+  }
+  .rights, .copyright-holder {
+    font-size: 4.2em;
+  }
+  a.md-button.foot-link, .landing-links-menu .md-button {
+    font-size: 4.8em;
+  }
+  .catal-logo-row .catal-logo-a {
+   font-size: 5.2em;
+  }
+  .img-title {
+    font-size: 7em; 
+  }
+  .img-inf {
+    font-size: 4.5em;
+  }
+  .shell-logo {
+    font-size: 16.5em;
+  }
+  .land-bot {
+    height: 90em;
+  }
+  .landing-links-menu{
+    text-align: center;
   }
 }

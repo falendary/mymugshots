@@ -17,9 +17,11 @@
                 templateUrl: 'interface.html'
             })
             .state('app.gallery', {
-                url: '/home',
+                url: '/home/{pageNumber}',
                 templateUrl: 'gallery.html',
+                reloadOnSearch: false,
                 params: {
+                    pageNumber: null,
                     phrase: null,
                     query: null,
                     datetime: null
@@ -32,8 +34,7 @@
 
 
         //$locationProvider.html5Mode({
-        //    enabled: true,
-        //    requireBase: false
+        //    enabled: true
         //});
 
         $urlRouterProvider.otherwise('/');

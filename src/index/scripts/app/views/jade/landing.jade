@@ -8,28 +8,25 @@ div(data-ng-controller="landingController as vm")
 						.center-content(layout="column")
 							h1(flex="100").shell-logo Site Title / Logo
 							div(flex, layout-align="center center", layout="row")
-								md-menu-bar(flex).landing-menu
-									md-menu(md-position-mode="center bottom", role="menu")
-										button(type="button") Category 1
-									md-menu(md-position-mode="center bottom", role="menu")
-										button(type="button") Category 2
-									md-menu(md-position-mode="center bottom", role="menu")
-										button(type="button") Category 3
-						.land-bot(layout="row")
+								div(layout="row", layout-align="center center", flex).landing-menu
+									md-button(href="#", type="button") Category 1
+									md-button(href="#", type="button") Category 2
+									md-button(href="#", type="button") Category 3
+						.land-bot(layout="row", layout-wrap)
 							div(flex,
-								layout-align="left bottom",
-								flex-sm="40",
+								layout="row",
+								layout-align="center end",
+								flex-sm="100",
 								flex-gt-sm="50")
 								p.copyright-holder
 									|<i class="fa fa-copyright"></i> SiteName 2015
-							div(flex,
-								layout-align="right bottom",
-								flex-sm="60",
-								flex-gt-sm="50")
-								md-menu-bar(flex).landing-links-menu
-									md-menu(md-position-mode="center bottom", role="menu")
-										button(type="button") Link 1
-									md-menu(md-position-mode="center bottom", role="menu")
-										button(type="button") Link 2
-									md-menu(md-position-mode="center bottom", role="menu")
-										button(type="button") Link 3
+							div(layout="row",
+								flex-sm="100",
+								flex-gt-sm="50",
+								layout-align="end end",
+								layout-align-sm="start start",
+								flex)
+								div(flex).landing-links-menu
+									md-button(href="#", type="button") Link 1
+									md-button(href="#", type="button") Link 2
+									md-button(href="#", type="button") Link 3
