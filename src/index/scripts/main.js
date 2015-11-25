@@ -35,7 +35,7 @@
     app.controller('landingController', ['$scope', require('./app/controllers/landingController')]);
     app.controller('galleryController', ['$scope', '$stateParams',  require('./app/controllers/galleryController')]);
     app.controller('detailController', ['$scope', '$stateParams', require('./app/controllers/detailController')]);
-    app.controller('interfaceController', ['$scope', '$state', require('./app/controllers/interfaceController')]);
+    app.controller('interfaceController', ['$scope', '$state', '$location', require('./app/controllers/interfaceController')]);
 
     app.directive('slickDir', ['$state', require('./app/directives/slickDir')]);
     app.directive('dropMenu', [require('./app/directives/dropMenu')]);

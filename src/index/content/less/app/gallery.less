@@ -55,7 +55,7 @@
   height: 0.2rem;
   background-color: #ffffff;
   display: block;
-  &:not(:last-child) {
+  &:not(:nth-child(3)) {
     margin-bottom: 0.3rem;
   }
 }
@@ -65,9 +65,12 @@ md-datepicker.md-default-theme, md-datepicker {
 .md-datepicker-input-container {
   display: none;
 }
+.md-default-theme .md-datepicker-open .md-datepicker-calendar-icon {
+  fill: #ffffff;
+}
 .md-datepicker-calendar-pane {
   background-color: #ffffff;
-  top: 21% !important;
+  top: 4.5rem !important;
   left: 13% !important;
 }
 .seeker-dropmenu {
@@ -107,9 +110,6 @@ md-menu-item {
   .catal-logo-a {
     font-size: 2em;
   }
-}
-.nav-filter {
-
 }
 .slide-wrap {
   height: 100%;
@@ -180,12 +180,12 @@ md-menu-item {
   background-color: #e5e5e5;
 }
 .abBlock-h {
-  // font-size: 2.5em;
+  font-size: 3em;
   font-family: RobotoBold;
 }
 .abBlock-p {
   font-size: 2em;
-  // font-family: RobotoBlack;
+  line-height: 1.2;
 }
 .layout-margin {
   .info-advert {
@@ -200,14 +200,18 @@ md-menu-item {
 }
 .widget-h {
   font-family: RobotoBold;
+  font-size: 3em;
 }
 .sitename-link {
   color: #000000;
   text-decoration: none;
 }
-.rights {
+.rights, .copyright-holder {
   margin-bottom: 0;
-  font-size: 0.7rem;
+  font-size: 1.5em;
+}
+.copyright-holder {
+  margin-bottom: 1rem;
 }
 .foot-list {
   padding: 0;
@@ -220,6 +224,7 @@ a.md-button.foot-link {
   padding: 0 10px;
   min-width: 0;
   text-transform: none;
+  font-size: 2.1em;
   &:hover {
     background-color: transparent;
   }
@@ -241,14 +246,15 @@ a.md-button.foot-link {
   font-size: 2em;
 }
 // Detail page
-.recent-v-wrap {
-  // width: 16.6%;
-}
 .recent-h {
   margin-left: 0.4rem;
+  font-size: 3em;
 }
 .big-detail-advert {
   .advert();
+}
+.img-title {
+   font-size: 5em;
 }
 @media screen and (max-width: 1199px) {
   .rn-carousel-custom {
@@ -275,9 +281,40 @@ a.md-button.foot-link {
   }
   .recent-inf {
     font-size: 1em;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .img-inf {
+    font-size: 2.4em;
+  }
+  .recent-h {
+    font-size: 3.7em;
+  }
+  .abBlock-h, .widget-h {
+    font-size: 3.5em;
+  }
+  .abBlock-p {
+    font-size: 2.6em;
+  }
+  .rights, .copyright-holder {
+    font-size: 2.1em;
+  }
+  a.md-button.foot-link, .landing-links-menu .md-button, .landing-menu .md-button {
+    font-size: 2.4em;
+  }
+  .catal-logo-row .catal-logo-a {
+    font-size: 2.7em;
+  }
+  .shell-logo {
+    font-size: 11.5em;
   }
 }
 @media screen and (max-width: 959px) {
+  .md-toolbar-tools.nav-tools {
+    height: auto;
+    max-height: 50rem;
+    padding: 0.5rem 0;
+  }
   .rn-carousel-custom {
     height: 37.9rem;
     .gallery-item-title {
@@ -307,6 +344,36 @@ a.md-button.foot-link {
   .recent-inf {
     font-size: 1.9em;
   }
+  .recent-h {
+    font-siez: 5em;
+  }
+  .abBlock-h, .widget-h {
+    font-size: 4.5em;
+  }
+  .abBlock-p {
+    font-size: 2.9em;
+  }
+  .rights, .copyright-holder {
+    font-size: 2.3em;
+  }
+   a.md-button.foot-link, .landing-links-menu .md-button {
+    font-size: 3em;
+  }
+  .landing-menu .md-button {
+    font-size: 3.3em;
+  }
+  .catal-logo-row .catal-logo-a {
+    font-size: 3.2em;
+  }
+  .img-inf {
+    font-size: 2.9em;
+  }
+  .shell-logo {
+    font-size: 14em;
+  }
+  .land-bot {
+    height: 40em;
+  }
 }
 @media screen and (max-width: 767px) {
   .rn-carousel-custom {
@@ -317,11 +384,6 @@ a.md-button.foot-link {
     .gallery-item-date {
       font-size: 2.8em;
     }
-  }
-  .md-toolbar-tools.nav-tools {
-    height: auto;
-    max-height: 50rem;
-    padding: 0.5rem 0;
   }
   .seeker-datepick {
     padding-left: 0.2em;
@@ -338,7 +400,34 @@ a.md-button.foot-link {
     margin-top: 0;
   }
   .img-title {
-   font-size: 7em; 
+   font-size: 6em;
+  }
+  .img-inf {
+    font-size: 3.6em;
+  }
+  .abBlock-h, .widget-h {
+    font-size: 5.5em;
+  }
+  .abBlock-p {
+    font-size: 3.7em;
+  }
+  .rights, .copyright-holder {
+    font-size: 3.6em;
+  }
+   a.md-button.foot-link, .landing-links-menu .md-button {
+    font-size: 3.4em;
+  }
+  .landing-menu .md-button {
+    font-size: 3.7em;
+  }
+  .catal-logo-row .catal-logo-a {
+    font-size: 3.9em;
+  }
+  .recent-h {
+    font-size: 6.3em;
+  }
+  .shell-logo {
+    font-size: 14em;
   }
 }
 @media screen and (max-width: 599px) {
@@ -355,7 +444,7 @@ a.md-button.foot-link {
     width: 50%;
   }
   .md-datepicker-calendar-pane {
-    top: 17% !important;
+    top: 3.5rem !important;
     left: 6% !important;
   }
   .layout-row > .flex-sm-100.nav-filter {
@@ -372,7 +461,6 @@ a.md-button.foot-link {
       min-width: 88px;
       margin: 0.6rem 0.3rem;
       min-height: 36px;
-      height: auto;
       padding-top: 0.3rem;
       padding-bottom: 0.3rem;
       padding-left: 1rem;
@@ -393,6 +481,9 @@ a.md-button.foot-link {
   a.md-button.foot-link:first-child {
     padding-left: 0;
   }
+   .landing-menu .md-button {
+    font-size: 4.6em;
+  }
   .layout-margin {
     .info-advert {
       margin-bottom: 1rem;
@@ -403,5 +494,35 @@ a.md-button.foot-link {
   }
   .recent-inf {
     font-size: 2.2em;
+  }
+  .abBlock-h, .widget-h {
+    font-size: 7em;
+  }
+  .abBlock-p {
+    font-size: 4.7em;
+  }
+  .rights, .copyright-holder {
+    font-size: 4.2em;
+  }
+  a.md-button.foot-link, .landing-links-menu .md-button {
+    font-size: 4.8em;
+  }
+  .catal-logo-row .catal-logo-a {
+   font-size: 5.2em;
+  }
+  .img-title {
+    font-size: 7em; 
+  }
+  .img-inf {
+    font-size: 4.5em;
+  }
+  .shell-logo {
+    font-size: 16.5em;
+  }
+  .land-bot {
+    height: 90em;
+  }
+  .landing-links-menu{
+    text-align: center;
   }
 }

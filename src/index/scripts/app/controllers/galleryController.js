@@ -156,6 +156,6 @@
             var day = date.getDay();
             return day === 0 || day === 6;
         }
-
+        // $scope.carousel.index = 0;
     }
 }());

@@ -87,9 +87,6 @@
             return false;
         }
 
-        //deleteAllCookies();
-
-
     }
 
 }());

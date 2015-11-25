@@ -9,6 +9,7 @@ div(data-ng-controller="interfaceController as vm")
 						div(layout="row", layout-wrap).md-toolbar-tools.nav-tools
 							div(flex-sm="80", 
 								flex-order-sm="1").seeker-datepick
+								md-button(data-ng-if="vm.url === 0", data-ng-click="vm.itemGoBack()", class="") Go Back
 								md-datepicker(data-ng-model="vm.filterDate",
 								data-ng-change="vm.filterByDate()", 
 								class="nav-datepicker")
@@ -84,14 +85,14 @@ div(data-ng-controller="interfaceController as vm")
 				md-card-content
 					.widgets(layout='row' layout-wrap)
 						.widget-1(flex-gt-md="33", flex-md="33", flex-sm="100")
-							.widget-block
-							h3.widget-h.md-title Widget 1
+							.widget-block.hide-sm
+							h3.widget-h Widget 1
 						.widget-2(flex-gt-md="33", flex-md="33", flex-sm="100", )
 							.widget-block.hide-sm
-							h3.widget-h.md-title Widget 2
+							h3.widget-h Widget 2
 						.widget-3(flex-gt-md="33", flex-md="33", flex-sm="100")
 							.widget-block.hide-sm
-							h3.widget-h.md-title Widget 3
+							h3.widget-h Widget 3
 				md-card-content.padding-bot-0
 					.gallery-foot(layout="row", layout-wrap)
 						div(flex="20", flex-sm="100", flex-order-sm="2")
