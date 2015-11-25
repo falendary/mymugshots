@@ -1,102 +1,17 @@
 div(data-ng-controller="galleryController as vm")
-	md-content.md-padding(flex)
-		div(layout="row", layout-align="center center")
-			md-card(flex-gt-sm="90", flex-gt-md="80").md-default-theme
-				md-card-content
-					.catal-logo-row(layout="row")
-						a(href="#" class="catal-logo-a") Site Title / Logo
-					md-toolbar.gallery-toolbar
-						div.md-toolbar-tools
-							div.nav-tools
-								//- md-menu(md-offset="20em 35em")
-								//- 	md-button.md-icon-button.gallery-datepicker-btn(ng-click="$mdOpenMenu($index)")
-								//- 		i.fa.fa-calendar
-								//- 	md-menu-content(width="6", class="date-menu")
-								//- 		md-menu-item
-								//- 			input(type='date', ng-model="date", class="datepicker")
-								//- 			md-button.date-sender accept
-								md-datepicker(ng-model="myDate")
-								md-menu(md-offset="20em 35em")
-									md-button.md-icon-button.gallery-search-btn(ng-click="$mdOpenMenu($index)")
-										i.fa.fa-search
-									md-menu-content(width="6", class="seeker-dropmen")
-										md-menu-item
-											md-input-container.seeker-inputmenu
-												input(name="search", class="seeker-input md-body-1")
-											md-button.seeker-subbtn
-												i.fa.fa-search
-							div.nav-links
-								md-button
-									| Today
-								md-button
-									| Yesterday
-								md-button
-									| Last Week
-								md-button
-									| The Month
-							p.filter-txt text explaining filter result
-					div.gallery-carousel()
-						div(slick-dir="", data-callback="vm.extendGallery()")
-							ul(rn-carousel).rn-carousel-custom
-								li.item-car(data-ng-repeat="slide in vm.slides track by slide.index")
-									md-grid-list(
-										md-cols="1",
-										md-row-height="1:1.6",
-										md-gutter="1em")
-										md-grid-title
-											md-card(flex="100", data-ng-repeat="item in slide.items")
-												.gallery-item
-													.gallery-item-photo()
-														img(data-ng-src="{{item.image_url}}", alt="{{item.first_name}}")
-													.gallery-item-title(data-ng-bind="::item.first_name", data-ui-sref="app.item({ id: item.booking_id })")
-													.gallery-item-date(data-ng-bind="::item.booking_datetime | date:'dd.mm.yyyy'")
-					div.loader-holder(data-ng-hide="vm.slides")
-						.loader
-							i.fa.fa-spinner.fa-spin
-				md-card-content
-					div(layout="row")
-						.ltAd
-						.rtAd
-				md-card-content
-					div(layout='row')
-						div(flex="66")
-							.about-block
-								h4.abBlock-h.md-title About Block
-								p.abBlock-p
-									|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet commodo nibh. Proin venenatis lobortis venenatis. Nulla facilisi. Nulla facilisi. liquam rutrum tortor a lorem malesuada, sed lobortis ipsum iaculis. Ut in augue ac risus viverra lobortis vestibulum in nibh. Integer vitae sodales lorem. 
-								p.abBlock-p
-									|Morbi laoreet erat lorem, ut dictum ante ultricies sed. Sed lacinia purus erat, eu accumsan diam sagittis et. Phasellus dictum arcu sed nibh pretium, vitae blandit augue dignissim.
-								p.abBlock-p
-									|Maecenas commodo mauris enim, ut semper ex luctus vitae. Ut a tempor libero. Fusce mauris orci, facilisis id magna quis, porttitor imperdiet massa. terdum et malesuada fames ac ante ipsum primis in faucibus.
-								p.abBlock-p
-									|Fusce vehicula velit massa, ut convallis massa lacinia eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque consequat vitae erat eget vehicula. Ut interdum odio ac erat porttitor, dapibus tempus risus mattis. Ut elementum quis tellus quis maximus.
-						div(layout="column", flex='33')
-							.inf-block(flex)
-								.inf-margin
-									h4.abBlock-h.md-title Info Block
-									p.abBlock-p
-										|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dictum arcu sed nibh pretium, vitae blandit augue dignissim.
-									p.abBlock-p
-										|Nullam sit amet commodo nibh. Proin venenatis lobortis venenatis.
-							.advert(flex)
-				md-card-content
-					.widgets(layout="row")
-						.widget-1(flex="33")
-							.widget-block
-							h3.widget-h.md-title Widget 1
-						.widget-2(flex="33")
-							.widget-block
-							h3.widget-h.md-title Widget 2
-						.widget-3(layout="column", flex="33")
-							.widget-block
-							h3.widget-h.md-title Widget 3
-				md-card-content.padding-bot-0
-					.gallery-foot(layout="row")
-						div(flex="75")
-							p.rights
-								|<i class="fa fa-copyright"></i> <a href="#" class='sitename-link'>SiteName 2015
-						div(flex="25")
-							md-list.foot-list(layout-align='end end')
-								md-button(href="#", class="foot-link") Link 1
-								md-button(href="#", class="foot-link") Link 1
-								md-button(href="#", class="foot-link") Link 1
+		div.gallery-carousel(data-ng-show="vm.slides")
+			div(slick-dir="", data-callback="vm.extendGallery()", data-ng-show="vm.slides.length")
+				ul(rn-carousel, class="ang-carousel").rn-carousel-custom
+					li.item-car(data-ng-repeat="slide in vm.slides track by slide.index")
+						.gallery-item(data-ng-repeat="item in slide.items")
+							md-card.gallery-item-photo
+								img(data-ng-src="{{item.image_url}}", alt="{{item.first_name}}")
+								md-card-content
+									.gallery-item-title(data-ng-bind="::item.first_name", data-ui-sref="app.item({ id: item.booking_id })")
+									.gallery-item-date(data-ng-bind="::item.booking_datetime | date:'dd.mm.yyyy'")
+			div(data-ng-hide="vm.slides.length")
+				h1
+					| No results found
+		div.loader-holder(data-ng-hide="vm.slides")
+			.loader
+				i.fa.fa-spinner.fa-spin

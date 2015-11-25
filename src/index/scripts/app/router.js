@@ -7,18 +7,25 @@
 
     module.exports = function ($stateProvider, $urlRouterProvider, $locationProvider) {
         $stateProvider
-            .state('app', {
-                url: '',
-                abstract: true,
-                templateUrl: 'shell.html'
-            })
-            .state('app.landing', {
+            .state('landing', {
                 url: '/',
                 templateUrl: 'landing.html'
             })
+            .state('app', {
+                url: '',
+                abstract: true,
+                templateUrl: 'interface.html'
+            })
             .state('app.gallery', {
-                url: '/home',
-                templateUrl: 'gallery.html'
+                url: '/home/{pageNumber}',
+                templateUrl: 'gallery.html',
+                reloadOnSearch: false,
+                params: {
+                    pageNumber: null,
+                    phrase: null,
+                    query: null,
+                    datetime: null
+                }
             })
             .state('app.item', {
                 url: '/item/:id',
@@ -27,8 +34,7 @@
 
 
         //$locationProvider.html5Mode({
-        //    enabled: true,
-        //    requireBase: false
+        //    enabled: true
         //});
 
         $urlRouterProvider.otherwise('/');

@@ -83,7 +83,6 @@
             .pipe(minifyCSS({keepBreaks: false, keepSpecialComments: false}))
             .pipe(rename({basename: 'main', suffix: '.min', extname: '.css'}))
             .pipe(gulp.dest('dist/' + appName + '/content/css/'))
-            .pipe(connect.reload());
     });
 
     gulp.task('index-min-JS', function () {
@@ -123,7 +122,11 @@
         }))
             .on('error', console.log)
         .pipe(gulp.dest('src/index/scripts/app/views/'))
-        .pipe(connect.reload());
+            .pipe(jade({
+                pretty: true
+            }))
+            .on('error', console.log)
+            .pipe(gulp.dest('src/index/scripts/app/views/'))
     });
 
     gulp.task('index-HTML-to-JS', function () {
@@ -164,15 +167,6 @@
             .pipe(gulp.dest('dist/'));
 
     });
-
-    // gulp.task('http-server', function() {
-    //     connect.server(
-    //     {
-    //         root: 'dist',
-    //         livereload: true
-    //     });
-    // });
-
     gulp.task('index-min-All', ['index-min-IndexHTML', 'index-min-LESS', 'index-min-JS', 'index-min-IMG', 'index-min-Fonts']);
 
     // Watchers
@@ -183,7 +177,11 @@
         gulp.watch('src/**/*.js', ['index-min-JS']);
         gulp.watch('src/index/content/fonts/*.{otf,eot,ttf,woff,woff2,eof,svg}', ['index-min-Fonts']);
         gulp.watch('src/index/content/**/*.{jpg,gif,png}', ['index-min-IMG']);
-        //livereload.reload(['landing.html']);
+        gulp.watch('src/**/*.{css,less}', ['index-min-LESS']);
+        gulp.watch('src/**/*.js', ['index-min-JS']);
+        gulp.watch('src/**/*.html', ['index-HTML-to-JS']);
+        gulp.watch('src/index/content/fonts/*.{otf,eot,ttf,woff,woff2,eof,svg}', ['index-min-Fonts']);
+        gulp.watch('src/index/content/**/*.{jpg,gif,png}', ['index-min-IMG']);
         gulp.watch('src/**/*.html', ['index-HTML-to-JS']);
         gulp.watch('src/**/*.jade', ['index-jade-to-HTML']);
     });

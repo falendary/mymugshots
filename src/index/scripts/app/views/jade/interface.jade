@@ -1,0 +1,104 @@
+div(data-ng-controller="interfaceController as vm")
+	md-content.md-padding(flex)
+		div(layout="row", layout-align="center center")
+			md-card(flex-gt-sm="90", flex-gt-md="80").md-default-theme.box-shadow-none
+				md-card-content
+					.catal-logo-row(layout="row")
+						a(href="#" class="catal-logo-a") Site Title / Logo
+					md-toolbar.gallery-toolbar
+						div(layout="row", layout-wrap).md-toolbar-tools.nav-tools
+							div(flex-sm="80", 
+								flex-order-sm="1").seeker-datepick
+								md-datepicker(data-ng-model="vm.filterDate",
+								data-ng-change="vm.filterByDate()", 
+								class="nav-datepicker")
+								md-menu(md-offset="15em 5em")
+									md-button.md-icon-button.gallery-search-btn(ng-click="$mdOpenMenu($index)")
+										i.fa.fa-search
+									md-menu-content(width="6", class="seeker-dropmen")
+										md-menu-item.seeker-menu-height
+											md-input-container.seeker-inputmenu
+												input(name="search", class="seeker-input md-body-1", data-ng-model="vm.searchQuery")
+											md-button.seeker-subbtn.md-primary(data-ng-click="vm.searchMate()")
+												i.fa.fa-search
+							div(flex-sm="20", 
+								flex-order-sm="2", 
+								hide show-sm,
+								layout="row",
+								layout-align="center center")
+								md-button(drop-menu="").menu-trig
+									span.button-desh
+									span.button-desh
+									span.button-desh
+							div.nav-filter(flex-sm="100", 
+											flex-order-sm="3",
+											hide-sm, 
+											layout-sm="column")
+								md-button.filter-btn(data-ui-sref="app.gallery({ phrase: 'today'})", ui-sref-opts="{reload: true}")
+									| Today
+								md-button.filter-btn(data-ui-sref="app.gallery({ phrase: 'yesterday'})", ui-sref-opts="{reload: true}")
+									| Yesterday
+								md-button.filter-btn(data-ui-sref="app.gallery({ phrase: 'lastweek'})", ui-sref-opts="{reload: true}")
+									| Last Week
+								md-button.filter-btn(data-ui-sref="app.gallery({ phrase: 'month'})", ui-sref-opts="{reload: true}")
+									| The Month
+				div(data-ui-view>)
+
+				md-card-content
+					div(layout="row", layout-wrap)
+						.ltAd.hide-sm.hide-md(flex-gt-md="50", flex-md="100", flex-sm="100" layout-padding)
+							div
+						.rtAd(flex-gt-md="50", flex-md="100", flex-sm="100" layout-padding)
+							div
+				md-card-content
+					div(layout='row' layout-wrap)
+						div(flex="66", flex-md="100",
+						flex-sm="100", layout-margin)
+							.about-block
+								h4.abBlock-h.md-title About Block
+								p.abBlock-p
+									| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet commodo nibh. Proin venenatis lobortis venenatis. Nulla facilisi. Nulla facilisi. liquam rutrum tortor a lorem malesuada, sed lobortis ipsum iaculis. Ut in augue ac risus viverra lobortis vestibulum in nibh. Integer vitae sodales lorem.
+								p.abBlock-p
+									| Morbi laoreet erat lorem, ut dictum ante ultricies sed. Sed lacinia purus erat, eu accumsan diam sagittis et. Phasellus dictum arcu sed nibh pretium, vitae blandit augue dignissim.
+								p.abBlock-p
+									| Maecenas commodo mauris enim, ut semper ex luctus vitae. Ut a tempor libero. Fusce mauris orci, facilisis id magna quis, porttitor imperdiet massa. terdum et malesuada fames ac ante ipsum primis in faucibus.
+								p.abBlock-p
+									| Fusce vehicula velit massa, ut convallis massa lacinia eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque consequat vitae erat eget vehicula. Ut interdum odio ac erat porttitor, dapibus tempus risus mattis. Ut elementum quis tellus quis maximus.
+						div(layout-gt-md="column",
+							layout-md="row", 
+							layout-sm="row", 
+							flex, 
+							flex-md="100",
+							flex-sm="100", 
+							layout-margin,
+							layout-align="center end"
+							layout-wrap)
+							.inf-block(flex="66", flex-md="50", flex-sm="100", flex-order-sm="2")
+								.inf-margin
+									h4.abBlock-h.md-title Info Block
+									p.abBlock-p
+										| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dictum arcu sed nibh pretium, vitae blandit augue dignissim.
+									p.abBlock-p
+										| Nullam sit amet commodo nibh. Proin venenatis lobortis venenatis.
+							.info-advert(flex, flex-md="50", flex-sm="100", flex-order-sm="1")
+				md-card-content
+					.widgets(layout='row' layout-wrap)
+						.widget-1(flex-gt-md="33", flex-md="33", flex-sm="100")
+							.widget-block
+							h3.widget-h.md-title Widget 1
+						.widget-2(flex-gt-md="33", flex-md="33", flex-sm="100", )
+							.widget-block.hide-sm
+							h3.widget-h.md-title Widget 2
+						.widget-3(flex-gt-md="33", flex-md="33", flex-sm="100")
+							.widget-block.hide-sm
+							h3.widget-h.md-title Widget 3
+				md-card-content.padding-bot-0
+					.gallery-foot(layout="row", layout-wrap)
+						div(flex="20", flex-sm="100", flex-order-sm="2")
+							p.rights
+								| <i class="fa fa-copyright"></i> SiteName 2015
+						div(flex="80", flex-sm="100", flex-order-sm="1")
+							md-list.foot-list(layout="row", layout-align-gt-sm='end end', layout-align-sm="start start")
+								md-button(href="#", class="foot-link") Link 1
+								md-button(href="#", class="foot-link") Link 1
+								md-button(href="#", class="foot-link") Link 1
