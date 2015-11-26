@@ -17,18 +17,19 @@ div(data-ng-controller="detailController as vm")
 					p.img-inf
 						|Booking on: {{vm.entity.booking_datetime | date:'dd.MM.yyyy'}}
 					p.img-inf
-						ol
-							li(data-ng-repeat="charge in vm.entity.agency_offenses[0].charges", class="charges-description")
-								p.charge-statute
-									|<b>Statute</b>: {{charge.statute}}
-								p.charge-level
-									|<b>Level</b>: {{charge.level}}
-								p.degree
-									|<b>Degree</b>: {{charge.degree}}
-								p
-									|<b>Description</b>:
-								p.charge-description
-									|{{charge.description}}
+						div(data-ng-repeat="agency in vm.entity.agency_offenses")
+							ol
+								li(data-ng-repeat="charge in agency.charges", class="charges-description")
+									p.charge-statute
+										|<b>Statute</b>: {{charge.statute}}
+									p.charge-level
+										|<b>Level</b>: {{charge.level}}
+									p.degree
+										|<b>Degree</b>: {{charge.degree}}
+									p
+										|<b>Description</b>:
+									p.charge-description
+										|{{charge.description}}
 			.two-advert(layout="column", flex="33")
 				div(flex, class="hide-md hide-sm")
 					.upper-advert

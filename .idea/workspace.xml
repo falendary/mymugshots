@@ -4,9 +4,6 @@
     <list default="true" id="e84ce90d-bc9d-4b51-9754-d55a347ab7d7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index/scripts/app/views/detail.html" afterPath="$PROJECT_DIR$/src/index/scripts/app/views/detail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index/scripts/app/views/jade/detail.jade" afterPath="$PROJECT_DIR$/src/index/scripts/app/views/jade/detail.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index/scripts/app/controllers/detailController.js" afterPath="$PROJECT_DIR$/src/index/scripts/app/controllers/detailController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index/content/less/app/gallery.less" afterPath="$PROJECT_DIR$/src/index/content/less/app/gallery.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index/content/css/main.min.css" afterPath="$PROJECT_DIR$/dist/index/content/css/main.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index/scripts/main.min.js" afterPath="$PROJECT_DIR$/dist/index/scripts/main.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index/scripts/app/templates.min.js" afterPath="$PROJECT_DIR$/src/index/scripts/app/templates.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -78,21 +75,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gallery.less" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gallery.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index/content/less/app/gallery.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6584235">
+            <state vertical-scroll-proportion="-7.7454543">
               <caret line="538" column="4" selection-start-line="538" selection-start-column="4" selection-end-line="538" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail.jade" pinned="false" current-in-tab="false">
+      <file leaf-file-name="detail.jade" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/index/scripts/app/views/jade/detail.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.925926">
-              <caret line="30" column="59" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.37037036">
+              <caret line="21" column="106" selection-start-line="21" selection-start-column="106" selection-end-line="21" selection-end-column="106" />
               <folding />
             </state>
           </provider>
@@ -185,8 +182,8 @@
         <option value="$PROJECT_DIR$/src/index/scripts/app/views/jade/gallery.jade" />
         <option value="$PROJECT_DIR$/src/index/scripts/app/controllers/galleryController.js" />
         <option value="$PROJECT_DIR$/src/index/scripts/app/controllers/detailController.js" />
-        <option value="$PROJECT_DIR$/src/index/scripts/app/views/jade/detail.jade" />
         <option value="$PROJECT_DIR$/src/index/content/less/app/gallery.less" />
+        <option value="$PROJECT_DIR$/src/index/scripts/app/views/jade/detail.jade" />
       </list>
     </option>
   </component>
@@ -899,7 +896,7 @@
       <workItem from="1447673816112" duration="2975000" />
       <workItem from="1448008597926" duration="14201000" />
       <workItem from="1448442151269" duration="2813000" />
-      <workItem from="1448526946048" duration="2001000" />
+      <workItem from="1448526946048" duration="2340000" />
     </task>
     <task id="LOCAL-00001" summary="add data">
       <created>1447793888198</created>
@@ -925,11 +922,17 @@
       <option name="project" value="LOCAL" />
       <updated>1448527546905</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix detail&#10;">
+      <created>1448528957329</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1448528957329</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32857000" />
+    <option name="totallyTimeSpent" value="33196000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -996,7 +999,8 @@
     <MESSAGE value="add data" />
     <MESSAGE value="Merge branch 'gh-pages' of https://github.com/falendary/mymugshots into gh-pages&#10;&#10;# Conflicts:&#10;#&#9;src/index/scripts/app/templates.min.js&#10;#&#9;src/index/scripts/app/views/detail.html&#10;#&#9;src/index/scripts/app/views/jade/detail.jade&#10;" />
     <MESSAGE value="fix font-sizes&#10;&#10;# Conflicts:&#10;#&#9;src/index/scripts/app/templates.min.js&#10;#&#9;src/index/scripts/app/views/detail.html&#10;#&#9;src/index/scripts/app/views/jade/detail.jade&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix font-sizes&#10;&#10;# Conflicts:&#10;#&#9;src/index/scripts/app/templates.min.js&#10;#&#9;src/index/scripts/app/views/detail.html&#10;#&#9;src/index/scripts/app/views/jade/detail.jade&#10;" />
+    <MESSAGE value="fix detail&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix detail&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1386,18 +1390,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index/scripts/app/views/jade/detail.jade">
+    <entry file="file://$PROJECT_DIR$/src/index/content/less/app/gallery.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.925926">
-          <caret line="30" column="59" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
+        <state vertical-scroll-proportion="-7.7454543">
+          <caret line="538" column="4" selection-start-line="538" selection-start-column="4" selection-end-line="538" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index/content/less/app/gallery.less">
+    <entry file="file://$PROJECT_DIR$/src/index/scripts/app/views/jade/detail.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6584235">
-          <caret line="538" column="4" selection-start-line="538" selection-start-column="4" selection-end-line="538" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.37037036">
+          <caret line="21" column="106" selection-start-line="21" selection-start-column="106" selection-end-line="21" selection-end-column="106" />
           <folding />
         </state>
       </provider>
