@@ -5,6 +5,7 @@ div(data-ng-controller="detailController as vm")
 			layout-align-sm="center start",
 			layout-wrap)
 			.big-detail-advert(flex-gt-md="33", flex-md="40", flex-sm="40")
+				img(data-ng-src="{{vm.entity.image_url}}")
 			.detail(flex-gt-md="33", flex-md="100", flex-sm="100")
 				.detail-block
 					h1.img-title
@@ -16,11 +17,18 @@ div(data-ng-controller="detailController as vm")
 					p.img-inf
 						|Booking on: {{vm.entity.booking_datetime | date:'dd.MM.yyyy'}}
 					p.img-inf
-						div(data-ng-repeat="charge in vm.entity.agency_offenses.charges")
-							p.charge-level
-								|{{charge.level}}
-							p.charge-description
-								|{{charge.description}}
+						ol
+							li(data-ng-repeat="charge in vm.entity.agency_offenses[0].charges", class="charges-description")
+								p.charge-statute
+									|<b>Statute</b>: {{charge.statute}}
+								p.charge-level
+									|<b>Level</b>: {{charge.level}}
+								p.degree
+									|<b>Degree</b>: {{charge.degree}}
+								p
+									|<b>Description</b>:
+								p.charge-description
+									|{{charge.description}}
 			.two-advert(layout="column", flex="33")
 				div(flex, class="hide-md hide-sm")
 					.upper-advert
@@ -34,7 +42,7 @@ div(data-ng-controller="detailController as vm")
 		div(layout="row", layout-wrap)
 			.recent-v-wrap(data-ng-repeat="recent in vm.recentlyItems track by $index", flex-gt-md="15", flex-md="25", flex-sm="33")
 				md-card
-					img(src="" data-ng-src="recent.image_url", alt="Lorem impsum")
+					img(src="" data-ng-src="{{recent.image_url}}", alt="Lorem impsum")
 					md-card-content.recent-inf
 						.gallery-item-title(data-ng-bind="::recent.first_name", data-ui-sref="app.item({ id: recent.booking_id })")
-						.gallery-item-date(data-ng-bind="::recent.booking_datetime")
+						.gallery-item-date(data-ng-bind="::recent.booking_datetime | date:'dd/MM/yyyy hh:mm'")

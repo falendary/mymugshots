@@ -29,6 +29,9 @@
             if (getCookie('recentlyItems')) {
                 vm.recentlyItems = JSON.parse(getCookie('recentlyItems'));
                 console.log('vm.recentlyItems', vm.recentlyItems);
+                for (var i = 0; i < vm.recentlyItems.length; i = i + 1) {
+                    vm.recentlyItems[i].booking_datetime = new Date(vm.recentlyItems[i].booking_datetime);
+                }
                 $scope.$apply();
 
                 if (!containsObject(vm.entity, vm.recentlyItems)) {
@@ -40,6 +43,7 @@
                 setCookie('recentlyItems', JSON.stringify(vm.recentlyItems), 30);
             } else {
                 setCookie('recentlyItems', JSON.stringify([{booking_datetime: vm.entity.booking_datetime,
+                    first_name: vm.entity.first_name,
                     booking_id: vm.entity.booking_id,
                     image_url: vm.entity.image_url
                 }]), 30);
